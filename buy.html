@@ -585,6 +585,93 @@
   </div>
 </div>
 
+<div class="bot_sign_wrap nm">
+	<div class="bot_sign">
+		<div class="bs_text"><span>Подпишитесь <br>на выгодные предложения</span></div>
+		<form action="#" class="bs_form">
+			<input class="bs_input" type="text" placeholder="Ваш e-mail">
+			<button class="bs_btn"><span>Подписаться</span></button>
+		</form>
+		<label class="niceCheck">
+		  <input type="checkbox" name="ch1" checked="checked">
+		  <span>Даю согласие на обработку <a href="">персональных данных</a></span>
+		</label>
+	</div>
+</div>
+
+
+
+<footer>
+<div class="footer">
+  <div class="f_top">
+    <div>
+      <a href="index.html" class="f_logo"><span>Подарочно</span><i>Дарите впечатления!</i></a>
+      <a class="f_tel" href='tel:+74952041964'>+7 (495) 204-19-64</a>
+      <div class="f_soc_ft_worktime">
+        <div class="ft_socials">
+          <a href="">WhatsApp</a>
+          <a href="">Telegram</a>
+        </div>
+        <div class="ft_worktime"><span>Время работы: </span>Понедельник - Пятница <br> с 11:00 до 20:00</div>
+    </div>
+    </div>
+    <div>
+      <div class="fl_head">Пользователю</div>
+      <ul class="f_list">
+        <li><a href="">Активировать септификат</a></li>
+        <li><a href="">Публичная оферта</a></li>
+        <li><a href="">Политика конфиденциальности</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fl_head">Сотрудничество</div>
+      <ul class="f_list">
+        <li><a href="">Подключение новых партнеров</a></li>
+        <li><a href="">Личный кабинет партнера</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fl_head">Дополнительно</div>
+      <ul class="f_list">
+        <li><a href="">Программа лояльности</a></li>
+        <li><a href="">Правила возврата</a></li>
+        <li><a href="">Конструктор впечатлений</a></li>
+        <li><a href="">Блог</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fl_head">Общая информация</div>
+      <ul class="f_list">
+        <li><a href="">Как это работает?</a></li>
+        <li><a href="">О нас</a></li>
+        <li><a href="">Отзывы</a></li>
+        <li><a href="">Акции</a></li>
+        <li><a href="">Оплата и доставка</a></li>
+        <li><a href="">Контакты</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f_bot">
+    <div class="fb_socials">
+      <a href=""><img src="images/tg.svg" alt=""></a>
+      <a href=""><img src="images/vk.svg" alt=""></a>
+      <a href=""><img src="images/odno.svg" alt=""></a>
+    </div>
+    <div class="copy">Подарочно™ © Все права защищены | 2017-2024 | podarochno.com</div>
+    <div class="fb_brands">
+      <img src="images/fb_1.svg" alt="">
+      <img src="images/fb_2.svg" alt="">
+      <img src="images/fb_3.svg" alt="">
+      <img src="images/fb_4.svg" alt="">
+    </div>
+  </div>
+</div>
+</footer>
+<div class="cookies_block">
+  <div class="cb_text">Мы используем Cookies для персонализации сервиса. Ознакомиться с <a href="">условиями обработки персональных данных</a></div>
+  <div class="cb_btn">ПРИНЯТЬ</div>
+</div>
+
 <script src="https://code.jquery.com/jquery.min.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="js/swiper-bundle.min.js"></script>
@@ -595,6 +682,36 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.fancybox.min.js"></script>
 <script src="js/scripts.js"></script>
+
+<script>
+  //buy fixed right
+  let sa = window.matchMedia('all and (min-width: 768px)');
+  if (sa.matches) {
+    $(window).scroll(function() {
+    let trigger = $('.bps_head').offset().top - 100;
+    if ($(this).scrollTop() > trigger) {
+      $('.bp_right').addClass('fixed')
+    } 
+    else {
+      $('.bp_right').removeClass('fixed')
+    }
+  });
+  
+  let $element = $('.bot_sign');
+  let counter = 0;
+  $(window).scroll(function() {
+    let scroll = $(window).scrollTop() + $(window).height();
+    let offset = $element.offset().top + 300
+  
+      if (scroll > offset && counter == 0) {
+        $('.bp_right').addClass('fixed_2')
+      } else{
+        $('.bp_right').removeClass('fixed_2')
+      }
+  });
+  } else {}
+  </script>
+
 <!-- modal window -->
 <div class="boxes">
   <div id="sys_err" class="window">

@@ -43,21 +43,31 @@ $('.burger, .hs_close').click(function(){
   // $('body').toggleClass('no_scroll')
   $('.search_btn').removeClass('opened')
   $('.s_popup_wrap').slideUp()
+  $('body').toggleClass('dark')
 })
 $('.hs_callback, .hs_back_2').click(function(e){
   $('.h_side_block_2').toggleClass('opened')
   e.preventDefault()
 })
-$('.h_city, .hs_back_3').click(function(e){
+$('.h_city>span, .hs_back_3, .address_mobile').click(function(e){
   $('.h_side_block_3').toggleClass('opened')
   e.preventDefault()
+  $('.address_mobile').hide()
 })
+$('.hcp_yes, .hcp_close').click(function(){
+  $('.hc_popup').hide()
+})
+$('.hcp_no').click(function(){
+  $('.hc_popup').hide()
+  $('.h_side_block_3').toggleClass('opened')  
+})
+
 $('.city_list >li > a').click(function(e){
   $('.h_side_block_3').toggleClass('opened')
   $('.city_list >li > a').removeClass('current')
   $(this).addClass('current')
   let city = $(this).text()
-  $('.h_city').text(city)
+  $('.h_city>span').text(city)
   e.preventDefault()
 })
 
@@ -68,9 +78,11 @@ $('.h_menu_mob li.pop > a').click(function(e){
 })
 
 
+
 //search popup
 $('.search_btn').click(function(){
   $('.s_popup_wrap').slideToggle()
+  $('body').toggleClass('dark_w')
   $('.burger').removeClass('opened')
   $('.h_side_block, .h_side_block_2, .h_side_block_3, .filter_popup, .q_popup').removeClass('opened')
   $(this).toggleClass('opened')
@@ -81,13 +93,19 @@ $('.search_btn').click(function(){
 //cart popup
 $('.h_cart, .cp_close').click(function(e){
   $('.cart_popup').toggleClass('opened')
+  $('body').toggleClass('dark')
   setTimeout(() => {
     $('.cp_content').show()
-    $('.cp_content_2').removeClass('opened')
+    $('.cp_content_2').removeClass('opened')    
     $('.cp_content_3').hide()
   }, 500);  
   e.preventDefault()
 })
+
+//cart empty
+if ($('.cp_goods div').length === 0) {
+  $('.cart_popup').addClass('empty')
+}
 
 //cart buy
 $('.cp_buy').click(function(){
@@ -387,12 +405,48 @@ $('.rsf_item').click(function(e){
 
 
 //cert name add
-$('.ci_top').click(function(){
+$('.default .card_item .ci_top').click(function(){
   $('.card_item').removeClass('selected')
   $(this).parent('.card_item').addClass('selected')
   let cef_name = $(this).children('.ci_name').text()
   $('.cef_name').text(cef_name)
 })
+
+//group cert names add
+$('.group .card_item .ci_top').click(function(){
+  $('.group .card_item').removeClass('selected')
+  $(this).parent('.card_item').addClass('selected')
+  let cef_name_group = $(this).children('.ci_name').text()
+  $('.cef_name_group').text(cef_name_group)
+})
+$('.part .card_item .ci_top').click(function(){
+  $('.part .card_item').removeClass('selected')
+  $(this).parent('.card_item').addClass('selected')
+  let cef_name_item = $(this).children('.ci_name').text()
+  $('.cef_name_item').text(cef_name_item)
+})
+
+
+//card items group
+var groupToParts = {
+  // тут можно назначать для групы g* несколько p* по соответствующим дата-атрибутам, указанным в html:
+  'g1': ['p1', 'p2'],
+  'g2': ['p4', 'p5', 'p3'],
+  'g3': ['p7', 'p8'],
+};
+$('.card_items.group .card_item').on('click', function() {
+  $('.card_items.group .card_item').removeClass('selected');
+  $(this).addClass('selected');
+  var group = $(this).data('imp');
+  $('.card_items.part .card_item').removeClass('selected');
+  if (groupToParts[group]) {
+    groupToParts[group].forEach(function(part) {
+      $('.card_items.part .card_item[data-imp="' + part + '"]').addClass('selected');
+    });
+  }
+});
+$('.card_items.group .card_item.selected').trigger('click');
+
 
 //buy scripts
 
@@ -642,6 +696,25 @@ $(function($){
 });
 
 
+//tel auth
+$('.get_auth').click(function(e){
+  $('.cf_auth').show()
+  $('.code_form, .cp_text').hide()
+  $(this).hide()
+  e.preventDefault()
+  var $countdownSpan = $('.cfa_timeline span');
+  var secondsLeft = 60;
+  $countdownSpan.text(secondsLeft);
+  var countdownTimer = setInterval(function() {
+    secondsLeft--;
+    $countdownSpan.text(secondsLeft);
+    if (secondsLeft <= 0) {
+      clearInterval(countdownTimer);
+    }
+  }, 1000);
+})
+
+
 //pincode
 $('.get_pincode').click(function(e){
   $('.cf_pincode').show()
@@ -649,8 +722,6 @@ $('.get_pincode').click(function(e){
   $(this).hide()
   e.preventDefault()
 })
-
-
 
 $('input').keyup(function(e){
 	var $wrap = $(this).closest('.pincode');
@@ -966,6 +1037,13 @@ sync2.on("click", ".owl-item", function(e) {
     var number = $(this).index();
     sync1.data('owl.carousel').to(number, 300, true);
 });
+
+
+//less than 5 elements in good_slider fix
+$('#sync2').find('.owl-stage').children().length < 5 && $('#sync2').addClass('no_controls');
+
+
+
 
 
 

@@ -333,16 +333,15 @@
     <div class="sa2_content">
       <div class="sa_left">
         <h4>Выберите 1 впечатление из 10</h4>
-        <div class="card_items">
-
-          <div class="card_item">
+        <div class="card_items default">
+          <div class="card_item" data-imp="p1">
             <div class="ci_top">
               <span class="ci_img"><img src="images/ci_1.jpg" alt=""></span>
               <span class="ci_name">Мастер-класс <br> создание бенто-торта</span>
             </div>
             <div data-modal="modal" data-pop="#cert_1" class="ci_about btn">Подробнее</div>
           </div>
-          <div class="card_item">
+          <div class="card_item" data-imp="p2">
             <div class="ci_top">
             <span class="ci_img"><img src="images/ci_2.jpg" alt=""></span>
             <span class="ci_name">Парк развлечений супер <br>остров мечты</span>
@@ -350,42 +349,42 @@
             <div data-modal="modal" data-pop="#cert_2" class="ci_about btn">Подробнее</div>
           </div>
 
-          <div class="card_item">
+          <div class="card_item" data-imp="p3">
             <div class="ci_top">
             <span class="ci_img"><img src="images/ci_1.jpg" alt=""></span>
             <span class="ci_name">Мастер-класс <br> создание бенто-торта</span>
           </div>
             <div data-modal="modal" data-pop="#cert_" class="ci_about btn">Подробнее</div>
           </div>
-          <div class="card_item">
+          <div class="card_item" data-imp="p4">
             <div class="ci_top">
             <span class="ci_img"><img src="images/ci_2.jpg" alt=""></span>
             <span class="ci_name">Парк развлечений супер <br>остров мечты</span>
           </div>
             <div data-modal="modal" data-pop="#cert_" class="ci_about btn">Подробнее</div>
           </div>
-          <div class="card_item">
+          <div class="card_item" data-imp="p5">
             <div class="ci_top">
             <span class="ci_img"><img src="images/ci_1.jpg" alt=""></span>
             <span class="ci_name">Мастер-класс <br> создание бенто-торта</span>
           </div>
             <div data-modal="modal" data-pop="#cert_" class="ci_about btn">Подробнее</div>
           </div>
-          <div class="card_item">
+          <div class="card_item" data-imp="p6">
             <div class="ci_top">
             <span class="ci_img"><img src="images/ci_2.jpg" alt=""></span>
             <span class="ci_name">Парк развлечений супер <br>остров мечты</span>
           </div>
             <div data-modal="modal" data-pop="#cert_" class="ci_about btn">Подробнее</div>
           </div>
-          <div class="card_item">
+          <div class="card_item" data-imp="p7">
             <div class="ci_top">
             <span class="ci_img"><img src="images/ci_1.jpg" alt=""></span>
             <span class="ci_name">Мастер-класс <br> создание бенто-торта</span>
           </div>
             <div data-modal="modal" data-pop="#cert_" class="ci_about btn">Подробнее</div>
           </div>
-          <div class="card_item">
+          <div class="card_item" data-imp="p8">
             <div class="ci_top">
             <span class="ci_img"><img src="images/ci_2.jpg" alt=""></span>
             <span class="ci_name">Парк развлечений супер <br>остров мечты</span>
@@ -531,7 +530,7 @@
 let sa = window.matchMedia('all and (min-width: 768px)');
 if (sa.matches) {
   $(window).scroll(function() {
-  let trigger = $('.sa_left h4').offset().top - 100;
+  let trigger = $('h4').offset().top - 100;
   if ($(this).scrollTop() > trigger) {
     $('.sa_right').addClass('fixed')
   } 

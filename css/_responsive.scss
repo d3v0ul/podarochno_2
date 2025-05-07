@@ -1084,6 +1084,15 @@ footer{
 .mai_text{
   font-size: 15px;
 }
+.address_mobile{
+  display: flex;
+}
+.am_head{
+  font-size: 12px;
+  >span{
+    font-size: 14px;
+  }
+}
 
 } /*1024*/
 @media only screen and (min-width : 768px){
