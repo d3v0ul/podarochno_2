@@ -67,6 +67,11 @@ body{
       &:hover{
         background: unset;
       }
+      &.fixed{
+        &:hover{
+          background: #fff;
+        }
+      }
     }
   }
   &.dark_w{

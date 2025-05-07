@@ -858,20 +858,34 @@ const swiper = new Swiper('.main_slider', {
   },
   on: {
     slideNextTransitionEnd: function (swiper) {
+      const $header = $('header');
+      const $mainSlider = $('.main_slider');
+      
       if($('.swiper-slide-active').hasClass('light')){
-        $('header, .main_slider').addClass('light')
-      } else{
-        $('header, .main_slider').removeClass('light')
+        $mainSlider.addClass('light');
+        if(!$header.hasClass('fixed')) {
+          $header.addClass('light');
+        }
+      } else {
+        $mainSlider.removeClass('light');
+        $header.removeClass('light');
       }
     },
     slidePrevTransitionEnd: function (swiper) {
+      const $header = $('header');
+      const $mainSlider = $('.main_slider');
+      
       if($('.swiper-slide-active').hasClass('light')){
-        $('header, .main_slider').addClass('light')
-      } else{
-        $('header, .main_slider').removeClass('light')
+        $mainSlider.addClass('light');
+        if(!$header.hasClass('fixed')) {
+          $header.addClass('light');
+        }
+      } else {
+        $mainSlider.removeClass('light');
+        $header.removeClass('light');
       }
     }
-  },
+  }
 });
 
 

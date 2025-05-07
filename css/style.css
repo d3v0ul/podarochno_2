@@ -135,6 +135,9 @@ body.dark:before {
 body.dark header:hover {
   background: unset;
 }
+body.dark header.fixed:hover {
+  background: #fff;
+}
 body.dark_w:before {
   background: rgba(0, 0, 0, 0.2);
   z-index: 5;
