@@ -859,8 +859,7 @@ const swiper = new Swiper('.main_slider', {
   on: {
     slideNextTransitionEnd: function (swiper) {
       const $header = $('header');
-      const $mainSlider = $('.main_slider');
-      
+      const $mainSlider = $('.main_slider');      
       if($('.swiper-slide-active').hasClass('light')){
         $mainSlider.addClass('light');
         if(!$header.hasClass('fixed')) {
@@ -873,8 +872,7 @@ const swiper = new Swiper('.main_slider', {
     },
     slidePrevTransitionEnd: function (swiper) {
       const $header = $('header');
-      const $mainSlider = $('.main_slider');
-      
+      const $mainSlider = $('.main_slider');      
       if($('.swiper-slide-active').hasClass('light')){
         $mainSlider.addClass('light');
         if(!$header.hasClass('fixed')) {
