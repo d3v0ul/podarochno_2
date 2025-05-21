@@ -1910,6 +1910,24 @@ h4{
       }
     }
     .tab_item{
+      @extend .content_page;
+      margin-top: unset;
+      ul, ol{
+        gap: 0 !important;
+        margin: 15px 0 !important;
+        li{
+          font-weight: 400 !important;
+        }
+      }
+      ul{
+        >li{
+          &:before{
+            width: 7px !important;
+            height: 7px !important;
+            top: 7px !important;
+          }
+        }
+      }
       p{
         font-size: 16px;
         margin-bottom: 20px;

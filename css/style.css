@@ -1992,6 +1992,21 @@ h4 {
   margin: 0 10px 0 0;
   font-size: 20px;
 }
+.tabs_block.tb_left .tab_item {
+  margin-top: unset;
+}
+.tabs_block.tb_left .tab_item ul, .tabs_block.tb_left .tab_item ol {
+  gap: 0 !important;
+  margin: 15px 0 !important;
+}
+.tabs_block.tb_left .tab_item ul li, .tabs_block.tb_left .tab_item ol li {
+  font-weight: 400 !important;
+}
+.tabs_block.tb_left .tab_item ul > li:before {
+  width: 7px !important;
+  height: 7px !important;
+  top: 7px !important;
+}
 .tabs_block.tb_left .tab_item p {
   font-size: 16px;
   margin-bottom: 20px;
@@ -3264,51 +3279,51 @@ footer {
   color: #fff;
 }
 
-.content_page {
+.content_page, .tabs_block.tb_left .tab_item {
   margin-top: 60px;
 }
-.content_page h2 {
+.content_page h2, .tabs_block.tb_left .tab_item h2 {
   font-weight: 700;
   margin-bottom: 50px;
   text-align: left;
 }
-.content_page h3 {
+.content_page h3, .tabs_block.tb_left .tab_item h3 {
   margin-bottom: 15px;
 }
-.content_page h4 {
+.content_page h4, .tabs_block.tb_left .tab_item h4 {
   margin-top: 30px;
 }
-.content_page p {
+.content_page p, .tabs_block.tb_left .tab_item p {
   font-size: 16px;
   margin-bottom: 15px;
 }
-.content_page ol {
+.content_page ol, .tabs_block.tb_left .tab_item ol {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 35px;
   padding-left: 18px;
 }
-.content_page ol > li {
+.content_page ol > li, .tabs_block.tb_left .tab_item ol > li {
   font-weight: 700;
   font-size: 16px;
 }
-.content_page ol > li > span {
+.content_page ol > li > span, .tabs_block.tb_left .tab_item ol > li > span {
   font-weight: 400;
 }
-.content_page ul {
+.content_page ul, .tabs_block.tb_left .tab_item ul {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 35px;
 }
-.content_page ul > li {
+.content_page ul > li, .tabs_block.tb_left .tab_item ul > li {
   font-size: 16px;
   position: relative;
   padding-left: 18px;
   position: relative;
 }
-.content_page ul > li:before {
+.content_page ul > li:before, .tabs_block.tb_left .tab_item ul > li:before {
   display: block;
   content: "";
   width: 9px;
@@ -8245,10 +8260,10 @@ img {
   .tabs_block.tb_left {
     margin-bottom: 50px;
   }
-  .content_page {
+  .content_page, .tabs_block.tb_left .tab_item {
     margin-top: 30px;
   }
-  .content_page h2 {
+  .content_page h2, .tabs_block.tb_left .tab_item h2 {
     margin-bottom: 25px;
   }
   .quote {
