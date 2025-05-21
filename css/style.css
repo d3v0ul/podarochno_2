@@ -1993,7 +1993,7 @@ h4 {
   font-size: 20px;
 }
 .tabs_block.tb_left .tab_item {
-  margin-top: unset;
+  margin-top: unset !important;
 }
 .tabs_block.tb_left .tab_item ul, .tabs_block.tb_left .tab_item ol {
   gap: 0 !important;

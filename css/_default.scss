@@ -1911,7 +1911,7 @@ h4{
     }
     .tab_item{
       @extend .content_page;
-      margin-top: unset;
+      margin-top: unset !important;
       ul, ol{
         gap: 0 !important;
         margin: 15px 0 !important;
