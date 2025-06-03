@@ -962,10 +962,10 @@ const rev_slider = new Swiper('.rev_slider', {
 
 
 //fancybox back focus
-$('.fancybox').fancybox({
+/* $('.fancybox').fancybox({
   backFocus: false,
   hash: false,
-})
+}) */
 
 
 //certs slider
@@ -1027,26 +1027,12 @@ sync2
         mouseDrag: false,
         touchDrag: false,
         margin: 5,
-        slideBy: slidesPerPage, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
+        slideBy: slidesPerPage,
         responsiveRefreshRate: 100
     }).on('changed.owl.carousel', syncPosition2);
 
 function syncPosition(el) {
-    //if you set loop to false, you have to restore this next line
     var current = el.item.index;
-
-    //if you disable loop you have to comment this block
-    // var count = el.item.count - 1;
-    // var current = Math.round(el.item.index - (el.item.count / 2) - .5);
-
-    // if (current < 0) {
-    //     current = count;
-    // }
-    // if (current > count) {
-    //     current = 0;
-    // }
-
-    //end block
 
     sync2
         .find(".owl-item")
@@ -1075,7 +1061,7 @@ function syncPosition2(el) {
 sync2.on("click", ".owl-item", function(e) {
     e.preventDefault();
     var number = $(this).index();
-    sync1.data('owl.carousel').to(number, 300, true);
+    sync1.data('owl.carousel').to(number, 100, true);
 });
 
 
@@ -1084,14 +1070,43 @@ $('#sync2').find('.owl-stage').children().length < 5 && $('#sync2').addClass('no
 
 //less than 2 elements in #sync2 then hide it
 if ($('#sync2 .item').length < 2) {
-    $('#sync2').hide();
+    $('#sync2, .owl-dots').hide();
 }
 
+//fancybox back focus
+$('.fancybox').fancybox({
+  backFocus: false,
+  hash: false,
+})
 
+//Fancybox > Owl Carousel sync
+$(document).on('afterShow.fb', function(e, instance) {
+    var current = instance.current;
+    if (current) {
+        var index = current.index;
+        var sync1 = $("#sync1").data('owl.carousel');
+        var sync2 = $("#sync2").data('owl.carousel');
+        
+        if (sync1) sync1.to(index, 0); 
+        if (sync2) sync1.to(index, 0);
+    }
+});
 
+$(document).on('click', '[data-fancybox-next], [data-fancybox-prev]', function() {
+    var instance = $.fancybox.getInstance();
+    if (instance) {
+        var index = instance.current.index;
+        var sync1 = $("#sync1").data('owl.carousel');
+        var sync2 = $("#sync2").data('owl.carousel');
+        if (sync1) sync1.to(index, 0);
+        if (sync2) sync2.to(index, 0);
+    }
+});
 
-
-
+$("#sync1").on('changed.owl.carousel', function(event) {
+    var index = event.item.index;
+    $("#sync2").data('owl.carousel').to(index, 0);
+});
 
 
 });
