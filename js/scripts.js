@@ -127,6 +127,12 @@ $('.ask_q, .ask_q_2, .qp_close').click(function(){
 })
 
 
+//card_item_del
+$('.ci_del').click(function(e){
+  $(this).parent('.card_item').hide()
+  e.preventDefault()
+})
+
 //search all results
 $('.ci_all').click(function(){
   // $('.sp_left .card_items').addClass('all')
@@ -830,7 +836,7 @@ inputs = $('.i2s_input').on('.i2s_input', function(){
 
 
 //sliders
-const swiper = new Swiper('.main_slider', {
+const swiperConfig = {
   direction: 'horizontal',
   loop: true,
   navigation: {
@@ -840,11 +846,11 @@ const swiper = new Swiper('.main_slider', {
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
-  },  
+  },
   autoplay: {
+    delay: 4000,
     pauseOnMouseEnter: true,
   },
-  delay: 4000,
   speed: 400,
   effect: "creative",
   creativeEffect: {
@@ -857,34 +863,56 @@ const swiper = new Swiper('.main_slider', {
     },
   },
   on: {
-    slideNextTransitionEnd: function (swiper) {
-      const $header = $('header');
-      const $mainSlider = $('.main_slider');      
-      if($('.swiper-slide-active').hasClass('light')){
-        $mainSlider.addClass('light');
-        if(!$header.hasClass('fixed')) {
-          $header.addClass('light');
-        }
-      } else {
-        $mainSlider.removeClass('light');
-        $header.removeClass('light');
+    init: function() {
+      const videos = this.el.querySelectorAll('video');
+      videos.forEach(video => {
+        video.muted = true;
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+      });
+      this.slides[this.activeIndex].querySelector('video')?.play().catch(e => console.log('Autoplay blocked'));
+    },
+    slideChangeTransitionStart: function() {
+      const currentVideo = this.slides[this.activeIndex].querySelector('video');
+      if (currentVideo) {
+        currentVideo.pause();
+        currentVideo.currentTime = 0;
       }
     },
-    slidePrevTransitionEnd: function (swiper) {
-      const $header = $('header');
-      const $mainSlider = $('.main_slider');      
-      if($('.swiper-slide-active').hasClass('light')){
-        $mainSlider.addClass('light');
-        if(!$header.hasClass('fixed')) {
-          $header.addClass('light');
-        }
-      } else {
-        $mainSlider.removeClass('light');
-        $header.removeClass('light');
+    slideChangeTransitionEnd: function() {
+      const nextVideo = this.slides[this.activeIndex].querySelector('video');
+      if (nextVideo) {
+        nextVideo.play().catch(e => console.log('Autoplay blocked'));
       }
+    },
+    slideNextTransitionEnd: function() {
+      this.updateHeaderClasses();
+    },
+    slidePrevTransitionEnd: function() {
+      this.updateHeaderClasses();
     }
   }
-});
+};
+
+swiperConfig.updateHeaderClasses = function() {
+  const $header = $('header');
+  const $mainSlider = $('.main_slider');
+  const isLight = $('.swiper-slide-active').hasClass('light');
+  
+  $mainSlider.toggleClass('light', isLight);
+  if (!$header.hasClass('fixed')) {
+    $header.toggleClass('light', isLight);
+  }
+};
+
+const swiper = new Swiper('.main_slider', swiperConfig);
+
+// Обход ограничения autoplay в Firefox
+document.addEventListener('click', function initVideos() {
+  document.querySelectorAll('.main_slider video').forEach(video => {
+    video.play().catch(e => console.log('Video play error:', e));
+  });
+}, { once: true });
 
 
 let gs2 = window.matchMedia('all and (max-width: 768px)');
@@ -1054,7 +1082,10 @@ sync2.on("click", ".owl-item", function(e) {
 //less than 5 elements in good_slider fix
 $('#sync2').find('.owl-stage').children().length < 5 && $('#sync2').addClass('no_controls');
 
-
+//less than 2 elements in #sync2 then hide it
+if ($('#sync2 .item').length < 2) {
+    $('#sync2').hide();
+}
 
 
 
