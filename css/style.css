@@ -4463,6 +4463,15 @@ footer {
   position: relative;
   z-index: 1;
 }
+.gs_info.single .gsi_item {
+  display: flex !important;
+  cursor: unset;
+  pointer-events: none;
+  outline: unset;
+}
+.gs_info.single .gsi_item:after {
+  display: none;
+}
 
 .gsi_item {
   min-height: 60px;
@@ -4717,6 +4726,15 @@ footer {
   width: max-content;
   max-width: 100%;
   margin-top: 15px;
+}
+.gs_select.single {
+  pointer-events: none;
+}
+.gs_select.single .select {
+  padding-right: 0;
+}
+.gs_select.single .select:after {
+  display: none;
 }
 
 .gs_delivery_info {
@@ -5425,6 +5443,18 @@ footer {
   cursor: pointer;
   transition: 0.3s;
 }
+.cit_line > div:nth-child(1) {
+  width: calc(25% - 10px);
+}
+.cit_line > div:nth-child(2) {
+  width: calc(40% - 10px);
+}
+.cit_line > div:nth-child(3) {
+  width: calc(30% - 10px);
+}
+.cit_line > div:nth-child(4) {
+  width: 25px;
+}
 .cit_line:hover {
   background: #d24500;
 }
@@ -5454,7 +5484,9 @@ footer {
 }
 
 .cit_time {
-  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-size: 14px;
   font-weight: 700;
   position: relative;
@@ -5466,9 +5498,6 @@ footer {
   height: 25px;
   background: url(../images/clock.svg) center no-repeat;
   background-size: cover;
-  position: absolute;
-  left: 0;
-  top: 4px;
 }
 
 .cit_person {
@@ -8814,6 +8843,13 @@ img {
   }
   .sa_left .card_items {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .ci_img {
+    height: unset;
+  }
+  .ci_img > img {
+    height: unset;
+    object-fit: unset;
   }
 } /*650 */
 @media only screen and (max-width: 550px) {

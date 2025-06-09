@@ -294,6 +294,24 @@ $(".gsi_item").click(function() {
   });
 });
 
+//gs_info sigle item
+$('.gs_info').each(function() {
+  if ($(this).children('div').length === 1) {
+    $(this).addClass('single');
+  }
+});
+
+
+//gp_address sigle item
+$('.gs_select').each(function() {
+  if ($(this).find('option').length === 1) {
+    $(this).addClass('single');
+  }
+});
+
+
+
+
 
 //cart add
 $(".gs_btn").click(function() {
@@ -1033,7 +1051,6 @@ sync2
 
 function syncPosition(el) {
     var current = el.item.index;
-
     sync2
         .find(".owl-item")
         .removeClass("current")
@@ -1085,8 +1102,7 @@ $(document).on('afterShow.fb', function(e, instance) {
     if (current) {
         var index = current.index;
         var sync1 = $("#sync1").data('owl.carousel');
-        var sync2 = $("#sync2").data('owl.carousel');
-        
+        var sync2 = $("#sync2").data('owl.carousel');        
         if (sync1) sync1.to(index, 0); 
         if (sync2) sync1.to(index, 0);
     }

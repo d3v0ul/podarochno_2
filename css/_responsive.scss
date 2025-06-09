@@ -1791,6 +1791,13 @@ h1{
     grid-template-columns: repeat(2, 1fr);
   }
 }
+.ci_img{
+  height: unset;
+  >img{
+    height: unset;
+    object-fit: unset;
+  }
+}
 
 
 
