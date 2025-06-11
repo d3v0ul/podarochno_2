@@ -207,13 +207,7 @@ section, .content{
   }
 }
 .gi_close{
-  width: 30px;
-  height: 30px;
-  top: 10px;
-  right: 8px;
-  &:before, &:after{
-    width: 25px;
-  }
+  @extend .ci_del;
 }
 .cit_close{
   width: 30px;
@@ -665,7 +659,7 @@ header{
   width: 115px;
   height: 115px;
   border-radius: 50%;
-  background: url(../images/q_medal.png) center no-repeat;
+  background: url(../images/q_medal.svg) center no-repeat;
   background-size: cover;
   position: absolute;
   bottom: 20px;
@@ -4886,7 +4880,7 @@ footer{
 .ask_q_2{    
   width: 81px;
   height: 81px;
-  background: url(../images/q_medal.png) center no-repeat;
+  background: url(../images/q_medal.svg) center no-repeat;
   background-size: cover;
   cursor: pointer;
   border-radius: 50%;
@@ -4918,6 +4912,43 @@ footer{
   .gc_reviews{
     margin: 0;
     width: calc(100% - 430px);
+  }
+  &.no_revs{
+    justify-content: flex-start;
+    align-items: center;
+    gap: 155px;
+    .ask_q{
+      margin-top: 0;
+    }
+  }
+}
+.gci_no_revs{
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  flex: 1;
+  max-width: 886px;
+  border: 2px dashed #DFDFDF;
+  padding: 30px 35px;  
+}
+.nr_plus{
+  width: 50px;
+  height: 50px;
+  background: url(../images/add_comm.svg) center / cover no-repeat;
+}
+.nr_text{
+  flex: 1;
+  max-width: 580px;
+  font-size: 20px;
+  line-height: 150%;
+  color: #202020;
+  >a{
+    font-size: 20px;
+    color: #202020;
+    text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+    }
   }
 }
 .good_imp{

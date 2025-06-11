@@ -910,6 +910,9 @@ footer{
   .gc_reviews{
     width: 100%;
   }
+  &.no_revs{
+    gap: 30px;
+  }
 }
 .gci_blocks{
   margin-top: 15px;
@@ -1789,6 +1792,20 @@ h1{
 .sa_left{
   .card_items{
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+.card_items{
+  &.favorites{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.ci_del{
+  width: 26px !important;
+  height: 26px !important;
+  top: 5px;
+  right: 5px;
+  &:before, &:after{
+    width: 17px;
   }
 }
 .ci_img{
