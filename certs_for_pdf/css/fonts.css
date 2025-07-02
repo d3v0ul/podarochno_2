@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'PT Root UI';
+    src: url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Regular.eot');
+    src: local('PT Root UI'), local('PTRootUI-Regular'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Regular.eot?#iefix') format('embedded-opentype'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Regular.woff2') format('woff2'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Regular.woff') format('woff'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PT Root UI';
+    src: url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Light.eot');
+    src: local('PT Root UI Light'), local('PTRootUI-Light'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Light.eot?#iefix') format('embedded-opentype'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Light.woff2') format('woff2'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Light.woff') format('woff'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PT Root UI';
+    src: url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Medium.eot');
+    src: local('PT Root UI Medium'), local('PTRootUI-Medium'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Medium.eot?#iefix') format('embedded-opentype'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Medium.woff2') format('woff2'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Medium.woff') format('woff'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PT Root UI';
+    src: url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Bold.eot');
+    src: local('PT Root UI Bold'), local('PTRootUI-Bold'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Bold.eot?#iefix') format('embedded-opentype'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Bold.woff2') format('woff2'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Bold.woff') format('woff'),
+    url('https://podarok.phpboss.ru/templates/fonts/PTRootUI-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Magistral';
+    src: url('https://podarok.phpboss.ru/templates/fonts/Magistral-Bold.eot');
+    src: local('Magistral Bold'), local('Magistral-Bold'),
+    url('https://podarok.phpboss.ru/templates/fonts/Magistral-Bold.eot?#iefix') format('embedded-opentype'),
+    url('https://podarok.phpboss.ru/templates/fonts/Magistral-Bold.woff2') format('woff2'),
+    url('https://podarok.phpboss.ru/templates/fonts/Magistral-Bold.woff') format('woff'),
+    url('https://podarok.phpboss.ru/templates/fonts/Magistral-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}

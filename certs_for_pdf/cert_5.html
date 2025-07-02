@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="RU-ru">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>Сертификат</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://podarochno.com/templates/css/fonts.css">
+
+</head>
+<body>
+	
+
+<div class="cert_wrapper beige">
+  <div class="cert">
+    <img src="{image}" alt="" class="cert_img">
+    <div class="cert_logo">ПОДАРОЧНО</div>
+    <div class="cert_content">
+      <div class="cert_name">ЭЛЕКТРОННЫЙ <span>СЕРТИФИКАТ</span></div>
+      <div class="cert_text_1">ПОЗДРАВЛЯЕМ! <br> ВЫ ПОЛУЧИЛИ ЭЛЕКТРОННЫЙ СЕРТИФИКАТ</div>
+      <div class="cert_block">
+        <div class="cert_arrow_block">
+          <img src="https://podarochno.com/templates/images/arrow_r_114.png" alt="" class="cab_arrow">
+          <div class="cab_text ct_2">{name}</div>
+        </div>
+      </div>
+      <div class="cert_qr_block">
+        <div class="cert_qr">
+          <img src="https://podarochno.com/templates/images/qr.png" alt="">
+          <div class="cert_qr_text">
+            Действителен до {valid_date} <br>
+            Код активации {code_activate} <br>
+            Номер сертификата {number}
+          </div>
+        </div>
+        <div class="cert_qr_text_2">{compliment}</div>
+      </div>
+      <div class="cert_bot">
+        <div class="cert_bot_contacts">
+          <div>+7 (926) 555-4455</div>
+          <div>podarochno.com</div>
+        </div>
+        <div class="cert_bot_rules">Правила использования сертификатом на странице podarochno.com/pravila</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+
+  .cert_wrapper {
+    width: 2480px;
+    min-height: 1750px;
+    position: relative;
+  }
+
+  .cert_wrapper.pink
+  {
+    background: #C3B6F1;
+  }
+  .cert_wrapper.beige
+  {
+    background: #FCDFE2;
+  }
+  .cert_wrapper.beige_2
+  {
+    background: #E3B1B5;
+  }
+  .cert_wrapper.blue
+  {
+    background: #B3D8F6;
+  }
+  .cert_wrapper.yellow
+  {
+    background: #EFEDAA;
+  }
+  .cert_wrapper:before {
+    display: block;
+    box-sizing: border-box;
+    content: '';
+    width: 35px;
+    height: 100%;
+    border-top: 24px solid #fff;
+    background: #000;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .cert_wrapper:after {
+    display: block;
+    box-sizing: border-box;
+    content: '';
+    width: 100%;
+    height: 35px;
+    border-left: 24px solid #fff;
+    background: #000;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .cert{
+    padding: 220px 150px 110px 220px;
+
+  }
+  .cert div{
+    font-family: 'Montserrat';
+  }
+
+
+  .cert_img{
+    display: block;
+    width: 100%;
+    max-width: 893px;
+    position: absolute;
+    top: 245px;
+    right: 35px;
+  }
+  .cert_img.ci_1{
+    max-width: 974px;
+    top: 190px;
+    right: 65px;
+  }
+
+  .cert_img.ci_2{
+    max-width: 1360px;
+    top: 60px;
+    right: 120px;
+  }
+
+  .cert_img.ci_3{
+    max-width: 998px;
+    top: 175px;
+    right: 0;
+  }
+  .cert_logo {
+    font-size: 125px;
+    font-weight: 700;
+    padding-left: 210px;
+    position: relative;
+  }
+
+  .cert_logo:before {
+    display: inline-block;
+    content: '';
+    width: 190px;
+    height: 215px;
+    background: url(https://podarochno.com/templates/images/logo.svg) center no-repeat;
+    filter: brightness(0);
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: -70px;
+  }
+
+
+
+  .cert_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 40px;
+    margin-top: 225px;
+    position: relative;
+    z-index: 1;
+  }
+
+
+  .cert_name{
+    font-size: 100px;
+    line-height: 110%;
+    font-weight: 700;
+  }
+
+  .cert_name > span {
+    display: block;
+    font-size: 150px;
+    line-height: 110%;
+    font-family: "Magistral";
+    font-weight: 700;
+    margin-top: 3px;
+  }
+
+
+
+  .cert_text_1 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+  .cert_text_1.ct1_2 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+
+
+
+
+  .cert_text_2{
+    font-size: 67px;
+    font-weight: 700;
+  }
+  .cert_block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 360px;
+    padding: 35px 0;
+  }
+  .cert_arrow_block{
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .ca_img{
+    width: 287px;
+    min-width: 287px;
+  }
+  .cab_arrow{
+    width: 114px;
+    min-width: 114px;
+    display: inline-block;
+  }
+  .cab_text {
+    font-size: 100px;
+    line-height: 110%;
+    font-weight: 700;
+    color: #661d8b;
+    display: inline-block;
+  }
+  .cab_text.ct_2{
+    font-size: 67px;
+  }
+
+
+
+
+  .cab_list {
+    margin-top: 26px;
+  }
+  .cab_list >li {
+    display: block;
+    font-size: 34px;
+    line-height: 110%;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding-left: 32px;
+    position: relative;
+  }
+  .cab_list:before{
+    display: block;
+    content: '';
+    width: 23px;
+    height: 23px;
+    background: url(https://podarochno.com/templates/images/arrow_r_114.png) center no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 8px;
+  }
+  .cab_list:last-child{
+    margin-bottom: 0;
+  }
+
+  .cert_qr_block{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  .cert_qr {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    width: 890px;
+    min-width: 890px;
+    background: #fff;
+    border-radius: 60px;
+    padding: 46px 30px 46px 60px;
+  }
+  .cab_list > img{
+    display: block;
+    width: 100%;
+    max-width: 122px;
+    display: inline-block;
+  }
+
+  .cert_qr_text{
+    font-size: 38px;
+    line-height: 110%;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .cert_qr_text_2{
+    max-width: 1180px;
+    width: 100%;
+    font-size: 38px;
+    line-height: 110%;
+    font-weight: 500;
+  }
+  .cert_bot{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-top: 15px;
+  }
+  .cert_bot_contacts {
+    display: flex;
+    gap: 90px;
+    align-items: center;
+    width: 890px;
+    min-width: 890px;
+  }
+  .cab_list >div {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 110%;
+  }
+  .cab_list:nth-child(2) {
+    position: relative;
+    transform: translateY(-5px);
+  }
+  .cab_list:before{
+    display: block;
+    content: '';
+    width: 5px;
+    height: 35px;
+    background: #202020;
+    position: absolute;
+    left: -45px;
+    top: 10px;
+  }
+
+  .cert_bot_rules{
+    max-width: 1180px;
+    width: 100%;
+    font-size: 25px;
+    line-height: 110%;
+    font-weight: 600;
+  }
+
+</style>
+</body>
+</html>
