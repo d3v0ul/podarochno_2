@@ -462,7 +462,7 @@
 <section class="co_for_employee">
   <h2>Подарки для сотрудников от 500 руб.</h2>
   <div class="co_text">Оставьте заявку, и мы подберем для вас от 20 до 300 услуг, исходя из вашего бюджета.получить список услуг</div>
-  <a href="" class="btn fe_btn">Получить список услуг</a>
+  <a data-modal="modal" data-pop="#map_modal" href="" class="btn fe_btn">Получить список услуг</a>
   <div class="card_items">
     <a href="good.html" class="card_item">
       <span class="ci_label">Набор 108 в 1</span>
@@ -912,6 +912,73 @@
       это сделать — помочь благотворительному
       фонду «Луч Добра». 
       </div>
+  </div>   
+  </div>
+  <div class="mask"></div>
+</div>
+<!-- end of modal window -->
+ <!-- modal window -->
+<div class="boxes">
+  <div id="map_modal" class="window">
+   <span class="close"></span>   
+  <div class="m_content">
+    <div class="m_head">Мы вышлем вам актуальный список услуг и карт магазинов</div>
+    <div class="m_text">Которые можно добавить в подарочный набор</div>
+    <form action="#" class="co_form">
+    <div class="cof_items">
+      <div class="cof_item">
+        <div class="cofi_head">Цена 1 подарка</div>
+        <div class="cofi_select">
+          <select  class="selectBlock">
+            <option value="0">1000 руб</option>
+            <option>2000 руб</option>
+            <option>3000 руб</option>
+          </select>
+        </div>  
+      </div>
+      <div class="cof_item">
+        <div class="cofi_head">Количество подарков</div>
+        <div class="cofi_select">
+          <select  class="selectBlock">
+            <option value="0">10-50</option>
+            <option>50-100</option>
+            <option>100-150</option>
+          </select>
+        </div>  
+      </div>
+      <div class="cof_item">
+        <div class="cofi_head">Город</div>
+        <div class="cofi_select">
+          <select  class="selectBlock">
+            <option value="0">Москва</option>
+            <option>Питер</option>
+            <option>Вологда</option>
+          </select>
+        </div>  
+      </div>
+      <div class="cof_item">
+        <div class="cofi_head">Как к вам обращаться?</div>
+        <input type="text" name="name" class="cofi_input" placeholder="Ваше имя">
+      </div>
+      <div class="cof_item">
+        <div class="cofi_head">Ваш e-mail</div>
+        <input type="email" name="email" class="cofi_input" placeholder="@">
+      </div>
+      <div class="cof_item">
+        <div class="cofi_head">Контактный телефон</div>
+        <input type="tel" name="tel" class="cofi_input phone" placeholder="+7" pattern="+7 ([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}">
+      </div>
+    </div>
+    <div class="cof_text_2">Оставьте заявку и получите дополнительный <span>бонус в подарок</span></div>
+    <div class="cof_check">
+      <label class="niceCheck">
+        <input type="checkbox" name="ch1" checked="checked">
+        <span>я даю согласие на обработку персональных данных в соответствии с <a href="">Политикой обработки персональных данных</a></span>
+      </label>
+    </div>
+    <input type="text" class="cof_submit btn" value="Получить список услуг">
+    <div class="m_text_2">Пришлём список в течении одного дня</div>
+  </form>
   </div>   
   </div>
   <div class="mask"></div>

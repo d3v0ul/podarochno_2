@@ -702,9 +702,39 @@ $('.rp_close').click(function(e){
 })
 
 
-
-
-
+//map selecton
+$('.boxes').each(function() {
+  const $box = $(this)
+  const $mapSelector = $box.find('.map_selector')
+  const $msList = $mapSelector.find('.ms_list')
+  const $msHead = $mapSelector.find('.ms_head')
+  const $cMap = $box.find('.c_map')
+  
+  if ($msList.find('li').length === 1) {
+    $msHead.addClass('single')
+  }
+  
+  $msList.hide()
+  $cMap.find('> div').hide()
+  $cMap.find('> div:first').show()
+  
+  $msHead.click(function() {
+    if (!$msHead.hasClass('single')) {
+      $msList.fadeToggle()
+    }
+  })
+  
+  $msList.find('li').click(function() {
+    const mapClass = $(this).data('map')
+    
+    $msHead.text($(this).text())
+    $(this).addClass('selected').siblings().removeClass('selected')
+    $msList.fadeOut()
+    
+    $cMap.find('> div').hide()
+    $cMap.find('> .' + mapClass).show()
+  })
+})
 
 
 
@@ -817,11 +847,13 @@ $('[data-modal=modal]').click(function(e) {
   $(id).css('top',  winH/2-$(id).height()/2);
   $(id).css('left', winW/2-$(id).width()/2);
   $(id).fadeIn(200);
+  $('.w_slide_up').addClass('visible')
   // $("body").css({"overflow":"hidden"});
 });
 $('.window .close, .mask').click(function (e) {
   e.preventDefault();
   $('.mask, .window').hide();
+  $('.w_slide_up').removeClass('visible')
   // $("body").css({"overflow":"auto"});
 });
   

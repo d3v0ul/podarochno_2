@@ -279,7 +279,6 @@
 }
 
 
-
 } /*1200*/
 @media only screen and (min-width : 1024px){
 header{
@@ -442,6 +441,10 @@ body{
 header{
   height: 70px;
   background: #fff;
+  &:before{
+    width: 0;
+    height: 0;
+  }
 }
 .h_top{
   height: 70px;
@@ -470,7 +473,7 @@ header{
 .h_side_block, .h_side_block_2, .h_side_block_3{
   width: 100%;
   height: calc(100dvh - 70px);
-  padding: 0 15px 130px;
+  padding: 15px 15px 130px;
   top: 69px;
   border-top: 1px solid #F3F3F3;
   position: absolute;
@@ -1232,8 +1235,6 @@ footer{
 }
 .cop_items{
   margin-top: 25px;
-}
-.cop_items{
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px 30px;
@@ -1315,7 +1316,6 @@ footer{
   font-size: 16px;
   margin-bottom: 10px;
 }
-
 
 
 
@@ -1899,7 +1899,20 @@ h1{
     font-size: 20px;
   }
 }
-
+#map_modal{
+  .m_text{
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+.m_text_2{
+  font-size: 14px;
+}
+.sert_act{
+  .card_item{
+    padding-bottom: 50px;
+  }
+}
 
 } /*768*/
 @media only screen and (max-width : 650px){
@@ -2187,11 +2200,7 @@ h1{
   }
 }
 .ci_img{
-  height: unset;
-  >img{
-    height: unset;
-    object-fit: unset;
-  }
+  height: 30dvw;
 }
 .cof_items{
   grid-template-columns: repeat(1, 1fr);
@@ -2204,6 +2213,9 @@ h1{
 }
 .co_pro_form{
   max-width: 100%;
+}
+.coi_item{
+  width: calc(50% - 20px);
 }
 
 } /*650 */
@@ -2508,15 +2520,13 @@ h1{
     text-transform: none;
   }
 }
-.coi_items{
-  flex-direction: column;
-  gap: 20px;
-}
 .cof_submit{
   text-transform: none;
 }
-.cop_item{
-  width: 100%;
+.coi_item{
+  br{
+    display: none;
+  }
 }
 .cri_block{
   min-width: 150px;
@@ -2608,6 +2618,14 @@ h2{
 }
 .coe_btn{
   text-transform: none;
+}
+.coi_item{
+  >div{
+    font-size: 14px;
+  }
+  >span{
+    font-size: 13px;
+  }
 }
 
 } /*390*/
