@@ -8395,7 +8395,7 @@ img {
   header.light .h_city > span {
     color: #fff;
   }
-  header.light .h_city:before {
+  header.light .h_city > span:before {
     filter: invert(100%) sepia(0%) saturate(7487%) hue-rotate(161deg) brightness(104%) contrast(104%);
   }
   header.light .h_tel {

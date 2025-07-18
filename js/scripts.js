@@ -944,6 +944,7 @@ const swiperConfig = {
         video.setAttribute('webkit-playsinline', '');
       });
       this.slides[this.activeIndex].querySelector('video')?.play().catch(e => console.log('Autoplay blocked'));
+      this.updateHeaderClasses();
     },
     slideChangeTransitionStart: function() {
       const currentVideo = this.slides[this.activeIndex].querySelector('video');
@@ -957,17 +958,12 @@ const swiperConfig = {
       if (nextVideo) {
         nextVideo.play().catch(e => console.log('Autoplay blocked'));
       }
-    },
-    slideNextTransitionEnd: function() {
-      this.updateHeaderClasses();
-    },
-    slidePrevTransitionEnd: function() {
       this.updateHeaderClasses();
     }
   }
 };
 
-swiperConfig.updateHeaderClasses = function() {
+Swiper.prototype.updateHeaderClasses = function() {
   const $header = $('header');
   const $mainSlider = $('.main_slider');
   const isLight = $('.swiper-slide-active').hasClass('light');
@@ -998,7 +994,7 @@ if (gs2.matches) {
       clickable: true,
     },  
   });
-} else {}
+}
 
 
 //rev slider
