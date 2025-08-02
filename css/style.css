@@ -290,6 +290,7 @@ body.dark_w:before {
   height: 30px;
   top: 10px;
   right: 8px;
+  position: fixed;
 }
 .impf_close:before, .impf_close:after {
   width: 25px;
@@ -534,6 +535,10 @@ header {
   left: 0;
   z-index: 5;
   transition: 0.3s;
+}
+header.hidden {
+  height: 0 !important;
+  overflow: hidden !important;
 }
 header.dark:before {
   display: block;
@@ -903,7 +908,9 @@ header.fixed_long {
 }
 
 .h_city_head {
+  display: none;
   font-size: 14px;
+  font-weight: 700;
   padding-top: 10px;
 }
 
@@ -1208,7 +1215,7 @@ header.fixed_long {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: #E0E0E0;
+  background: #000;
   background-size: 15px;
   position: absolute;
   top: 50%;
@@ -2369,8 +2376,8 @@ h4 {
 }
 
 .bot_sign {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -5817,7 +5824,7 @@ footer {
 }
 
 .bp_right {
-  max-width: 470px;
+  max-width: 320px;
   width: 100%;
 }
 .bp_right.fixed {
@@ -5841,7 +5848,7 @@ footer {
 }
 .bpr_block .cp_promo {
   margin-top: 17px;
-  border: 1px dashed #C8C8C8;
+  border: 1px dashed #000;
   background: unset;
 }
 
@@ -5888,14 +5895,20 @@ footer {
   justify-content: center;
   align-items: center;
   margin-top: 25px;
-  background: #C3C3C3;
+  background: #000;
+  text-transform: none;
+  font-size: 18px;
   font-weight: 700;
+}
+.bpr_sbp:hover {
+  background: #2d2d2d;
 }
 .bpr_sbp > img {
   max-width: 60px;
+  margin-right: 5px;
 }
 .bpr_sbp.disabled {
-  background: #C3C3C3;
+  background: #666666;
   pointer-events: none;
 }
 
@@ -8372,7 +8385,7 @@ img {
     max-width: 320px;
   }
   .bpr_block {
-    padding: 15px;
+    padding: 25px 15px 30px;
   }
   .coi_items {
     flex-wrap: wrap;
@@ -8435,7 +8448,7 @@ img {
   header.light:hover .h_city > span {
     color: #202020;
   }
-  header.light:hover .h_city:before {
+  header.light:hover .h_city > span:before {
     filter: unset;
   }
   header.light:hover .h_tel {
@@ -8571,7 +8584,7 @@ img {
     width: calc(100% + 30px);
     transform: translateX(-15px);
     background: #E8E8E8;
-    padding: 15px;
+    padding: 15px 50px 15px 15px;
     position: relative;
   }
   .h_side_block .h_menu_mob:after {
@@ -8795,8 +8808,10 @@ img {
     max-width: 550px;
     width: 100%;
     margin: 0 auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
     flex-direction: column;
-    gap: 25px;
+    gap: 10px;
     align-items: flex-start;
   }
   footer {
@@ -9317,6 +9332,9 @@ img {
   .copfi_head {
     font-size: 16px;
     margin-bottom: 10px;
+  }
+  .h_city_head {
+    display: block;
   }
 } /*1024*/
 @media only screen and (min-width: 768px) {

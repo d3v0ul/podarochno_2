@@ -225,6 +225,7 @@ section, .content{
   height: 30px;
   top: 10px;
   right: 8px;
+  position: fixed;
   &:before, &:after{
     width: 25px;
     background: #000;
@@ -466,6 +467,10 @@ header{
   left: 0;
 	z-index: 5;
   transition: .3s;
+  &.hidden{
+    height: 0 !important;
+    overflow: hidden !important;
+  }
   &.dark{
     &:before{
       display: block;
@@ -481,7 +486,7 @@ header{
     height: 100dvh;       
   }
   &:hover{
-    background: #fff;    
+    background: #fff; 
   }
   &.fixed{
     position: fixed;
@@ -823,7 +828,9 @@ header{
   height: 120px !important;
 }
 .h_city_head{
+  display: none;
   font-size: 14px;
+  font-weight: 700;
   padding-top: 10px;
 }
 .h_city{  
@@ -1118,7 +1125,7 @@ header{
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background: #E0E0E0;
+    background: #000;
     background-size: 15px;
     position: absolute;
     top: 50%;
@@ -2291,8 +2298,8 @@ h4{
 }
 .bot_sign{
 	@extend %ct;
-	padding-top: 30px;
-	padding-bottom: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -5595,7 +5602,7 @@ footer{
   position: relative;
 }
 .bp_right{
-  max-width: 470px;
+  max-width: 320px;
   width: 100%;  
   &.fixed{
     position: fixed;
@@ -5617,7 +5624,7 @@ footer{
   padding: 30px;
   .cp_promo{
     margin-top: 17px;
-    border: 1px dashed #C8C8C8;
+    border: 1px dashed #000;
     background: unset;
   }
 }
@@ -5662,13 +5669,19 @@ footer{
   justify-content: center;
   align-items: center;
   margin-top: 25px;  
-  background: #C3C3C3; 
+  background: #000; 
+  text-transform: none;
+  font-size: 18px;
   font-weight: 700; 
+  &:hover{
+    background: #2d2d2d;
+  }
   >img{
     max-width: 60px;
+    margin-right: 5px;
   }
   &.disabled{
-    background: #C3C3C3;  
+    background: #666666;  
     pointer-events: none;
   }
 }

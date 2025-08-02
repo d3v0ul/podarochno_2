@@ -123,6 +123,7 @@ $('.cp_login_btn').click(function(e){
 //q_popup
 $('.ask_q, .ask_q_2, .qp_close').click(function(){
   $('.q_popup').toggleClass('opened')
+  $('header').toggleClass('dark')
 })
 
 
@@ -211,6 +212,7 @@ $(".fi_head").click(function() {
 //courier_popup
 $(".r7, .cour_p_close, .cf_btn, .bpsc_address_btn").click(function() {
   $(".courier_popup").toggleClass('opened')
+  $('header').removeClass('dark')
 });
 
 
@@ -224,6 +226,7 @@ $(".ppp_pop_open, .ppp_btn").click(function() {
 //city_popup
 $(".bpsc_city_btn, .adr_city, .city_p_close").click(function() {
   $(".city_popup").toggleClass('opened')
+  $('header').toggleClass('dark')
   // $('body').toggleClass('no_scroll')
 });
 
@@ -245,12 +248,14 @@ $(".mps_mob_btn").click(function() {
 
 //delivery_type_popup
 $(".gdi_delivery, .dtp_close").click(function() {
+  $('header').toggleClass('dark')
   $(".delivery_type_popup").toggleClass('opened')
 });
 
 
 //address_popup
 $(".dtp_city, .gs_city, .adr_close").click(function() {
+  $('header').toggleClass('dark')
   $(".address_popup").toggleClass('opened')
 });
 
@@ -573,6 +578,7 @@ $('.r6').click(function(){
 $('.r7').click(function(){
   $('.r8').removeClass('selected')
   $(this).addClass('selected')
+  $('header').addClass('dark')
   $('.bps_courier_info').show()
   $('.bps_address_2_selected').hide()
   $('.bps4, .bps5').removeClass('disabled')

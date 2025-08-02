@@ -271,7 +271,7 @@
   max-width: 320px;
 }
 .bpr_block{
-  padding: 15px;
+  padding: 25px 15px 30px;
 }
 .coi_items{
   flex-wrap: wrap;
@@ -363,10 +363,10 @@ header{
       .h_city{
         >span{
           color: #202020;
-        }
-        &:before{
-          filter: unset;          
-        }
+          &:before{
+            filter: unset;                    
+          }
+        }        
       }
       .h_tel{
         color: #202020;
@@ -521,7 +521,7 @@ header{
     width: calc(100% + 30px);
     transform: translateX(-15px);
     background: #E8E8E8;
-    padding: 15px;
+    padding: 15px 50px 15px 15px;
     position: relative;
     &:after{
       display: block;
@@ -760,8 +760,10 @@ h4{
 	max-width: 550px;
 	width: 100%;
 	margin: 0 auto;
+  padding-bottom: 10px;
+  padding-top: 10px;
 	flex-direction: column;
-	gap: 25px;
+	gap: 10px;
 	align-items: flex-start;
 }
 footer{
@@ -1316,7 +1318,9 @@ footer{
   font-size: 16px;
   margin-bottom: 10px;
 }
-
+.h_city_head{
+  display: block;
+}
 
 
 
