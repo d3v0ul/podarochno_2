@@ -286,10 +286,13 @@ body.dark_w:before {
 }
 
 .impf_close {
+  display: none;
   width: 30px;
   height: 30px;
+  background: #fff;
+  border-radius: 50%;
   top: 10px;
-  right: 8px;
+  right: 15px;
   position: fixed;
 }
 .impf_close:before, .impf_close:after {
@@ -1806,6 +1809,7 @@ header.fixed_long {
 
 .h_menu_mob {
   display: none;
+  overflow: hidden;
 }
 
 .main_cat {
@@ -1951,10 +1955,10 @@ h4 {
 .ci_label {
   display: inline-block;
   vertical-align: top;
-  padding: 6px;
+  padding: 3px 4px;
   background: #D24500;
   color: #fff;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 120%;
   font-weight: 500;
   position: absolute;
@@ -1964,6 +1968,9 @@ h4 {
 }
 .ci_label.green {
   background: #00C80E;
+}
+.ci_label.red {
+  background: red;
 }
 
 .ci_link {
@@ -4045,8 +4052,8 @@ footer {
 .fl_set_btn {
   display: block;
   float: right;
-  font-size: 20px;
-  padding: 5px 0 0 84px;
+  font-size: 16px;
+  padding: 15px 0 0 74px;
   position: relative;
   transition: 0.3s;
   margin-top: -25px;
@@ -5352,7 +5359,9 @@ footer {
 }
 
 .gi_item {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
 }
 .gi_item.add {
@@ -5426,6 +5435,7 @@ footer {
 
 .gi_name {
   display: block;
+  flex: 1;
   font-size: 20px;
   line-height: 120%;
   margin-top: 15px;
@@ -8312,10 +8322,6 @@ img {
   .card_items {
     gap: 20px;
   }
-  .ci_label {
-    font-size: 12px;
-    padding-top: 4px;
-  }
   .ci_name {
     font-size: 16px;
     margin-top: 7px;
@@ -9193,6 +9199,7 @@ img {
     margin-top: -12px;
     font-size: 16px;
     padding-left: 37px;
+    padding-top: 5px;
   }
   .fl_set_btn:before {
     width: 30px;
