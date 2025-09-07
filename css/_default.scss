@@ -407,6 +407,7 @@ section, .content{
 .ms_content{
   width: 50%;
   max-width: 500px;
+  background: rgba(244, 244, 244, 0.5);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -422,8 +423,22 @@ section, .content{
     }
   }
   &.light{
+    background: rgba(0, 0, 0, 0.5);
+    &:hover{
+      .msc_btn{
+        color: #fff;
+      }      
+    }
     .msc_head, .msc_text{
       color: #fff;
+    }
+    .msc_btn{
+      background: #fff;
+      color: #000;
+      
+      &:before{
+        background: #000;        
+      }
     }
   }
 }
@@ -5647,15 +5662,15 @@ footer{
   >div{
     display: inline-block;
     vertical-align: top;
-    background: #F4F4F4;
+    background: rgba(244, 244, 244, 0.5);
     padding-right: 4px;
     font-size: 16px;
-    transform: translateY(4px);    
+    transform: translateY(4px); 
     &:nth-child(2){
       padding: 0 0 0 4px;
       font-size: 20px;
       font-weight: 700;
-      white-space: nowrap;
+      white-space: nowrap;      
     }
   }
 }

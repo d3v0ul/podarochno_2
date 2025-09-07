@@ -475,6 +475,7 @@ body.dark_w:before {
 .ms_content {
   width: 50%;
   max-width: 500px;
+  background: rgba(244, 244, 244, 0.5);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -488,8 +489,21 @@ body.dark_w:before {
 .ms_content:hover .msc_btn:before {
   width: 100%;
 }
+.ms_content.light {
+  background: rgba(0, 0, 0, 0.5);
+}
+.ms_content.light:hover .msc_btn {
+  color: #fff;
+}
 .ms_content.light .msc_head, .ms_content.light .msc_text {
   color: #fff;
+}
+.ms_content.light .msc_btn {
+  background: #fff;
+  color: #000;
+}
+.ms_content.light .msc_btn:before {
+  background: #000;
 }
 
 .msc_head {
@@ -5872,7 +5886,7 @@ footer {
 .bpr_line > div {
   display: inline-block;
   vertical-align: top;
-  background: #F4F4F4;
+  background: rgba(244, 244, 244, 0.5);
   padding-right: 4px;
   font-size: 16px;
   transform: translateY(4px);
@@ -10164,11 +10178,11 @@ img {
 } /*650 */
 @media only screen and (max-width: 550px) {
   .ms_content {
-    width: 55%;
+    width: fit-content;
     max-width: 100%;
     left: unset;
     right: 15px;
-    padding: 20px 0;
+    padding: 20px 15px;
   }
   .msc_head {
     font-size: 28px;

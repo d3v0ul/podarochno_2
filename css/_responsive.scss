@@ -2222,11 +2222,11 @@ h1{
 } /*650 */
 @media only screen and (max-width : 550px){
 .ms_content{
-  width: 55%;
+  width: fit-content;
   max-width: 100%;
   left: unset;
   right: 15px;
-  padding: 20px 0;
+  padding: 20px 15px;
 }
 .msc_head{
   font-size: 28px;
