@@ -85,6 +85,12 @@ body{
 section, .content{
   @extend %ct;
 }
+.no_bdb{
+  border-bottom: unset !important;
+  &:before{
+    display: none !important;
+  }
+}
 .top_info{
   display: flex;
   align-items: center;
@@ -1303,6 +1309,10 @@ header{
     bottom: 4px;
     left: 0;
   }
+}
+.cp_price_text{
+  font-size: 14px;
+  margin-top: 10px;
 }
 .cp_total{
   display: flex;
@@ -3031,6 +3041,16 @@ footer{
   font-size: 24px;
   font-weight: 700;
   color: #5a5a5a;
+  >a{
+    font-size: 24px;
+    line-height: 140%;
+    font-weight: 700;
+    color: #000;
+    transition: .3s;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
 }
 .p_text{
   font-size: 14px;
@@ -5645,6 +5665,7 @@ footer{
   }
 }
 .bpr_block{
+  min-height: 320px;
   background: url(../images/bpr_block_bg.png) center / cover no-repeat;
   padding: 30px;
   .cp_promo{
@@ -5659,6 +5680,9 @@ footer{
   align-items: flex-end;
   border-bottom: 1px dashed #747474;
   margin-top: 15px;
+  &.delivery_text{
+    font-size: 14px;
+  }
   >div{
     display: inline-block;
     vertical-align: top;
@@ -6376,7 +6400,7 @@ footer{
   align-items: center;
   gap: 20px;
   border-bottom: 1px solid #E0E0E0;
-  cursor: pointer;
+  cursor: pointer;  
 }
 .bps_buy{
   margin-top: 40px;

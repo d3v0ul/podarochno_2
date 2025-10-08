@@ -353,6 +353,21 @@ $('.gs_select').each(function() {
 });
 
 
+//check height
+/* function updateBprBackground() {
+  $('.bpr_block').each(function() {
+      if ($(this).height() < 300) {
+          $(this).css('background', '#F1F1F1 url(../images/bpr_block_bg.png) center / contain no-repeat');
+      } else {
+          $(this).css('background', 'url(../images/bpr_block_bg.png) center / cover no-repeat');
+      }
+  });
+}
+
+updateBprBackground();
+$(window).resize(updateBprBackground); */
+
+
 
 
 

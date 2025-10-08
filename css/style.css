@@ -143,6 +143,13 @@ body.dark_w:before {
   z-index: 5;
 }
 
+.no_bdb {
+  border-bottom: unset !important;
+}
+.no_bdb:before {
+  display: none !important;
+}
+
 .top_info {
   display: flex;
   align-items: center;
@@ -1402,6 +1409,11 @@ header.fixed_long {
   position: absolute;
   bottom: 4px;
   left: 0;
+}
+
+.cp_price_text {
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .cp_total {
@@ -3129,6 +3141,16 @@ footer {
   font-size: 24px;
   font-weight: 700;
   color: #5a5a5a;
+}
+.p_head > a {
+  font-size: 24px;
+  line-height: 140%;
+  font-weight: 700;
+  color: #000;
+  transition: 0.3s;
+}
+.p_head > a:hover {
+  text-decoration: underline;
 }
 
 .p_text {
@@ -5867,6 +5889,7 @@ footer {
 }
 
 .bpr_block {
+  min-height: 320px;
   background: url(../images/bpr_block_bg.png) center/cover no-repeat;
   padding: 30px;
 }
@@ -5882,6 +5905,9 @@ footer {
   align-items: flex-end;
   border-bottom: 1px dashed #747474;
   margin-top: 15px;
+}
+.bpr_line.delivery_text {
+  font-size: 14px;
 }
 .bpr_line > div {
   display: inline-block;
