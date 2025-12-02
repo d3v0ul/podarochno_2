@@ -33,6 +33,72 @@ $('.ti_close').click(function(){
 }) */
 
 
+// Loader
+var loaderOverlay = $('.loader_overlay')
+var loader = $('.loader')
+var loaderLine = $('.loader-line')
+var loaderPercent = $('.loader-percent')
+var progress = 0
+var loaderInterval
+
+if (loaderOverlay.length === 0) {
+  $('body').prepend('<div class="loader_overlay"></div><div class="loader"><div class="loader-line"></div><span class="loader-percent">0%</span></div>')
+  loaderOverlay = $('.loader_overlay')
+  loader = $('.loader')
+  loaderLine = $('.loader-line')
+  loaderPercent = $('.loader-percent')
+}
+
+function startLoader() {
+  loaderOverlay.fadeIn(200)
+  loader.fadeIn(200)
+  progress = 0
+  loaderLine.css('width', '0%')
+  loaderPercent.text('0%')
+  loaderInterval = setInterval(function() {
+    if (progress < 90) {
+      var increment = (90 - progress) * 0.1 + Math.random() * 3
+      progress += increment
+      loaderLine.css('width', progress + '%')
+      loaderPercent.text(Math.round(progress) + '%')
+    }
+  }, 150)
+}
+
+function finishLoader() {
+  if (loaderInterval) clearInterval(loaderInterval)
+  loaderLine.css('width', '100%')
+  loaderPercent.text('100%')
+  setTimeout(function() {
+    loader.fadeOut(00)
+    loaderOverlay.fadeOut(300, function() {
+      loaderLine.css('width', '0')
+      loaderPercent.text('0%')
+      progress = 0
+    })
+  }, 400)
+}
+
+startLoader()
+
+$(window).on('load', function() {
+  setTimeout(finishLoader, 1000)
+})
+
+setTimeout(finishLoader, 4000)
+
+$(document).ajaxStart(function() {
+  if (loaderOverlay.is(':hidden')) {
+    startLoader()
+  }
+})
+
+$(document).ajaxComplete(function() {
+  setTimeout(finishLoader, 500)
+})
+// end of Loader
+
+
 //header scrolling + top info close + calculating fixed range
 let scrollPos = 0
 $(window).scroll(function(){    

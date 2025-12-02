@@ -278,7 +278,10 @@
 } /*1200*/
 @media only screen and (min-width : 1024px){
 header{
+  background: rgba(244, 244, 244, 0.5);
   &.light{
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: unset;
     .main_slider{
       .swiper-button-prev{
         &:hover{
@@ -344,6 +347,7 @@ header{
       }
     }
     &:hover{
+      background: #fff;
       .h_menu{
         >ul{
           >li{
