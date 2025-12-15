@@ -34,19 +34,78 @@ $('.ti_close').click(function(){
 
 
 // Loader
-var loaderOverlay = $('.loader_overlay')
+/* var loaderOverlay = $('.loader_overlay')
 var loader = $('.loader')
 var loaderLine = $('.loader-line')
 var loaderPercent = $('.loader-percent')
 var progress = 0
 var loaderInterval
+var pageLoaded = false; // load page flag
 
-if (loaderOverlay.length === 0) {
-  $('body').prepend('<div class="loader_overlay"></div><div class="loader"><div class="loader-line"></div><span class="loader-percent">0%</span></div>')
-  loaderOverlay = $('.loader_overlay')
-  loader = $('.loader')
-  loaderLine = $('.loader-line')
-  loaderPercent = $('.loader-percent')
+function startLoader() {
+  // don't use if page loaded
+  if (pageLoaded) return
+  
+  loaderOverlay.fadeIn(200)
+  loader.fadeIn(200)
+  progress = 0;
+  loaderLine.css('width', '0%')
+  loaderPercent.text('0%')
+  
+  loaderInterval = setInterval(function() {
+    if (progress < 90) {
+      var increment = (90 - progress) * 0.1 + Math.random() * 3;
+      progress += increment
+      loaderLine.css('width', progress + '%')
+      loaderPercent.text(Math.round(progress) + '%')
+    }
+  }, 150)
+}
+
+function finishLoader() {
+  if (loaderInterval) clearInterval(loaderInterval)
+  loaderLine.css('width', '100%')
+  loaderPercent.text('100%')
+  
+  setTimeout(function() {
+    loader.fadeOut(200)
+    loaderOverlay.fadeOut(300, function() {
+      loaderLine.css('width', '0')
+      loaderPercent.text('0%')
+      progress = 0
+      pageLoaded = true // page load flag
+    });
+  }, 400)
+}
+
+startLoader();
+$(window).on('load', function() {
+  setTimeout(finishLoader, 300)
+});
+setTimeout(function() {
+  if (!pageLoaded) {
+    finishLoader()
+  }
+}, 5000) */
+// end of Loader
+
+// Loader
+var loaderOverlay = $('.loader_overlay')
+var loader = $('.loader')
+var loaderLine = $('.loader-line')
+var loaderPercent = $('.loader-percent')
+
+if (loaderOverlay.length === 0 || loader.length === 0) {
+  console.log('Loader elements not found - skipping loader script')
+  return
+}
+
+var progress = 0
+var loaderInterval
+var pageAlreadyLoaded = sessionStorage.getItem('pageAlreadyLoaded') // check from sessionStorage
+if (pageAlreadyLoaded) {
+  loaderOverlay.hide()
+  loader.hide()
 }
 
 function startLoader() {
@@ -55,6 +114,7 @@ function startLoader() {
   progress = 0
   loaderLine.css('width', '0%')
   loaderPercent.text('0%')
+  
   loaderInterval = setInterval(function() {
     if (progress < 90) {
       var increment = (90 - progress) * 0.1 + Math.random() * 3
@@ -69,34 +129,29 @@ function finishLoader() {
   if (loaderInterval) clearInterval(loaderInterval)
   loaderLine.css('width', '100%')
   loaderPercent.text('100%')
+  
   setTimeout(function() {
-    loader.fadeOut(00)
+    loader.fadeOut(200)
     loaderOverlay.fadeOut(300, function() {
       loaderLine.css('width', '0')
       loaderPercent.text('0%')
       progress = 0
+      sessionStorage.setItem('pageAlreadyLoaded', true)
     })
   }, 400)
 }
 
 startLoader()
-
 $(window).on('load', function() {
-  setTimeout(finishLoader, 1000)
+  setTimeout(finishLoader, 300)
 })
-
-setTimeout(finishLoader, 4000)
-
-$(document).ajaxStart(function() {
-  if (loaderOverlay.is(':hidden')) {
-    startLoader()
+setTimeout(function() {
+  if (loaderOverlay.is(':visible') || loader.is(':visible')) {
+    finishLoader()
   }
-})
-
-$(document).ajaxComplete(function() {
-  setTimeout(finishLoader, 500)
-})
+}, 5000)
 // end of Loader
+
 
 
 //header scrolling + top info close + calculating fixed range
