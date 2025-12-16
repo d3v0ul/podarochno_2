@@ -34,7 +34,7 @@ $('.ti_close').click(function(){
 
 
 // Loader
-/* var loaderOverlay = $('.loader_overlay')
+var loaderOverlay = $('.loader_overlay')
 var loader = $('.loader')
 var loaderLine = $('.loader-line')
 var loaderPercent = $('.loader-percent')
@@ -86,11 +86,11 @@ setTimeout(function() {
   if (!pageLoaded) {
     finishLoader()
   }
-}, 5000) */
+}, 5000)
 // end of Loader
 
 // Loader
-var loaderOverlay = $('.loader_overlay')
+/* var loaderOverlay = $('.loader_overlay')
 var loader = $('.loader')
 var loaderLine = $('.loader-line')
 var loaderPercent = $('.loader-percent')
@@ -149,7 +149,7 @@ setTimeout(function() {
   if (loaderOverlay.is(':visible') || loader.is(':visible')) {
     finishLoader()
   }
-}, 5000)
+}, 5000) */
 // end of Loader
 
 
