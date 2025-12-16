@@ -87,6 +87,7 @@ section, .content{
 }
 .no_bdb{
   border-bottom: unset !important;
+  padding-top: 10px;
   &:before{
     display: none !important;
   }
@@ -3817,10 +3818,11 @@ footer{
 .niceCheck_2{	
 	@extend .niceCheck;
 	display: block;
-	width: max-content;
+	/* width: max-content; */
 	min-height: 26px;	
 	padding-left: 34px;
 	margin-bottom: 9px;
+  margin-top: 10px;
 	>span{
 		display: inline-block;
 		font-size: 16px;
@@ -6395,7 +6397,7 @@ footer{
 }
 .bps_pay_line{
   display: flex;
-  height: 70px;
+  min-height: 70px;
   justify-content: space-between;
   align-items: center;
   gap: 20px;

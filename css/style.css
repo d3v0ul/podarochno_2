@@ -145,6 +145,7 @@ body.dark_w:before {
 
 .no_bdb {
   border-bottom: unset !important;
+  padding-top: 10px;
 }
 .no_bdb:before {
   display: none !important;
@@ -3954,10 +3955,11 @@ footer {
 
 .niceCheck_2 {
   display: block;
-  width: max-content;
+  /* width: max-content; */
   min-height: 26px;
   padding-left: 34px;
   margin-bottom: 9px;
+  margin-top: 10px;
 }
 .niceCheck_2 > span {
   display: inline-block;
@@ -6673,7 +6675,7 @@ footer {
 
 .bps_pay_line {
   display: flex;
-  height: 70px;
+  min-height: 70px;
   justify-content: space-between;
   align-items: center;
   gap: 20px;

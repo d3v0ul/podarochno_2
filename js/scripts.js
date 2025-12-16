@@ -543,10 +543,18 @@ $('.gi_item.add').click(function(e){
       $('body').addClass('no_scroll');
       $('.impf_close').show()
       //scroll filter to top
-      $('.f_btn, .turbo2').on('click', function() {
+      /* $('.f_btn, .turbo2').on('click', function() {
         $('.imp_filter').animate({
           scrollTop: 0
         }, 500);
+      }); */
+      $('.turbo2').on('click', function() {
+        $('.imp_filter').animate({
+          scrollTop: 0
+        }, 500);
+      });
+      $('.f_btn').on('click', function() {
+        $('.if_left').toggleClass('opened')
       });
     }
   });
