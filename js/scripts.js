@@ -688,7 +688,7 @@ $('.card_items.group .card_item.selected').trigger('click');
 //buy scripts
 
 //fixed right part
-let fr = window.matchMedia('all and (min-width: 768px)');
+/* let fr = window.matchMedia('all and (min-width: 768px)');
 if (fr.matches) {
   $(window).scroll(function(){  
     if ($(this).scrollTop()>100)
@@ -698,7 +698,23 @@ if (fr.matches) {
       $(".bp_right").removeClass("fixed");  
     }
   });
-} else {}
+} */
+
+let fr = window.matchMedia('all and (min-width: 768px)');
+function updateRightPanel() {
+  if ($(window).scrollTop() > 100) {
+    $(".bp_right").addClass("fixed");
+  } else {
+    $(".bp_right").removeClass("fixed");
+  }
+}
+
+if (fr.matches) {
+  updateRightPanel();
+  $(window).scroll(function() {
+    updateRightPanel();
+  });
+}
 
 
 //buy stages
@@ -719,7 +735,8 @@ $('.r1').click(function(){
   $('.rp_2').hide()
   $('.bps2, .bps3, .bps4, .bps5').removeClass('disabled')
   $('.bps2, .bps3, .bps4, .bps5').addClass('opened')
-  $('.bps2, .bps3, .bps4, .bps5').children('.bps_popup').slideDown()
+  //$('.bps2, .bps3, .bps4, .bps5').children('.bps_popup').slideDown()
+  $('.bps2, .bps3, .bps4, .bps5').children('.bps_popup').show()
   // $('.bps4').hide()
   $('.bps_digital').show()
   $('.bps_box').hide()
@@ -732,7 +749,8 @@ $('.r2').click(function(){
   $('.rp_1').hide()
   $('.bps2, .bps3').removeClass('disabled')
   $('.bps2, .bps3').addClass('opened')
-  $('.bps2, .bps3').children('.bps_popup').slideDown()
+  //$('.bps2, .bps3').children('.bps_popup').slideDown()
+  $('.bps2, .bps3').children('.bps_popup').show()
   // $('.bps4').show()
   $('.bps_digital').hide()
   $('.bps_box').show()
@@ -768,7 +786,8 @@ $('.r7').click(function(){
   $('.bps_address_2_selected').hide()
   $('.bps4, .bps5').removeClass('disabled')
   $('.bps4, .bps5').addClass('opened')
-  $('.bps4, .bps5').children('.bps_popup').slideDown()
+  //$('.bps4, .bps5').children('.bps_popup').slideDown()
+  $('.bps4, .bps5').children('.bps_popup').show()
 })
 $('.r8').click(function(){
   $('.r7').removeClass('selected')
@@ -777,7 +796,8 @@ $('.r8').click(function(){
   $('.bps_address_selected').hide()
   $('.bps4, .bps5').removeClass('disabled')
   $('.bps4, .bps5').addClass('opened')
-  $('.bps4, .bps5').children('.bps_popup').slideDown()
+  //$('.bps4, .bps5').children('.bps_popup').slideDown()
+  $('.bps4, .bps5').children('.bps_popup').show()
 })
 
 $('.bps_pay_line').click(function(){

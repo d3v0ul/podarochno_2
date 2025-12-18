@@ -37,7 +37,7 @@
           <div class="bps_head"><span>1</span>Выбор типа сертификата</div>
           <div class="bps_popup">
               <div class="bps_radios">
-                <div class="bps_radio r1"><span>Электронный сертификат</span>
+                <div class="bps_radio r1 selected"><span>Электронный сертификат</span>
                 <i>
                   <span class="i_i"></span>
                   <span class="i_pop">
@@ -692,7 +692,7 @@
 <script src="js/jquery.fancybox.min.js"></script>
 <script src="js/scripts.js"></script>
 
-<script>
+<!-- <script>
   //buy fixed right
   let sa = window.matchMedia('all and (min-width: 768px)');
   if (sa.matches) {
@@ -719,7 +719,38 @@
       }
   });
   } else {}
-  </script>
+  </script> -->
+
+<script defer>
+//buy fixed right
+let sa = window.matchMedia('all and (min-width: 768px)')
+function updateRightPanel() {
+  let trigger = $('.bps_head').offset().top - 100
+  if ($(window).scrollTop() > trigger) {
+    $('.bp_right').addClass('fixed')
+  } else {
+    $('.bp_right').removeClass('fixed')
+  }
+}
+function updateRightPanelFixed2() {
+  let $element = $('.bot_sign')
+  let scroll = $(window).scrollTop() + $(window).height()
+  let offset = $element.offset().top + 300  
+  if (scroll > offset) {
+    $('.bp_right').addClass('fixed_2')
+  } else {
+    $('.bp_right').removeClass('fixed_2')
+  }
+}
+if (sa.matches) {
+  updateRightPanel()
+  updateRightPanelFixed2()  
+  $(window).scroll(function() {
+    updateRightPanel()
+    updateRightPanelFixed2()
+  })
+}
+</script>
 
 <!-- modal window -->
 <div class="boxes">
