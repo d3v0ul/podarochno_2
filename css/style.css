@@ -6686,6 +6686,9 @@ footer {
 .bps_buy {
   margin-top: 40px;
 }
+.bps_buy.mob {
+  display: none;
+}
 
 .delivery_type_popup, .address_popup {
   max-width: 500px;
@@ -9974,6 +9977,13 @@ img {
   }
   .bpr_block {
     background: rgb(244, 244, 244);
+  }
+  .bps_buy {
+    display: none;
+  }
+  .bps_buy.mob {
+    display: block;
+    margin-top: 10px;
   }
 } /*768*/
 @media only screen and (max-width: 650px) {

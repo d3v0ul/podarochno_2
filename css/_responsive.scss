@@ -1924,6 +1924,14 @@ h1{
 .bpr_block{
   background: rgb(244, 244, 244);
 }
+.bps_buy{
+  display: none;
+  &.mob{
+    display: block;
+    margin-top: 10px;
+  }
+}
+
 
 } /*768*/
 @media only screen and (max-width : 650px){
