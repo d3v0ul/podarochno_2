@@ -34,7 +34,7 @@ $('.ti_close').click(function(){
 
 
 // Loader
-var loaderOverlay = $('.loader_overlay')
+/* var loaderOverlay = $('.loader_overlay')
 var loader = $('.loader')
 var loaderLine = $('.loader-line')
 var loaderPercent = $('.loader-percent')
@@ -86,7 +86,7 @@ setTimeout(function() {
   if (!pageLoaded) {
     finishLoader()
   }
-}, 5000)
+}, 5000) */
 // end of Loader
 
 // Loader
@@ -362,6 +362,18 @@ $(".fl_btn, .fp_close").click(function() {
 });
 
 
+//hotel filter popup
+$(".ho_fl_btn, .ho_close").click(function() {
+  $(".ho_filters").toggleClass('opened')
+});
+
+
+//hotel filter selection
+$(".hof_btns > div").click(function() {
+  $(this).toggleClass('selected')
+});
+
+
 //filter items popup
 $(".fi_head").click(function() {
   $(this).siblings(".fi_popup").slideToggle()
@@ -392,7 +404,7 @@ $(".bpsc_city_btn, .adr_city, .city_p_close").click(function() {
 
 
 //map_popup
-$(".fl_map_btn, .r8, .mp_close, .bpsc_address_btn_2, .mp_back").click(function(e) {
+$(".fl_map_btn, .r8, .mp_close, .bpsc_address_btn_2, .mp_back, .ho_btn").click(function(e) {
   $(".map_popup").toggleClass('opened')
   // $('body').toggleClass('no_scroll')
   e.preventDefault()
@@ -1009,8 +1021,8 @@ $('.get_pincode').click(function(e){
   $(this).hide()
   e.preventDefault()
 })
-
-$('input').keyup(function(e){
+//only digit input
+$('.i_number').keyup(function(e){
 	var $wrap = $(this).closest('.pincode');
 	var $inputs = $wrap.find('input[type="number"]');	
 	var val = $(this).val();
@@ -1057,14 +1069,19 @@ $('[data-modal=modal]').click(function(e) {
   $(id).css('top',  winH/2-$(id).height()/2);
   $(id).css('left', winW/2-$(id).width()/2);
   $(id).fadeIn(200);
-  $('.w_slide_up').addClass('visible')
+  $('.w_slide_up').addClass('visible')  
   // $("body").css({"overflow":"hidden"});
 });
 $('.window .close, .mask').click(function (e) {
   e.preventDefault();
   $('.mask, .window').hide();
   $('.w_slide_up').removeClass('visible')
+  $('.modal_pause').removeClass('visible')
   // $("body").css({"overflow":"auto"});
+});
+
+$('.rocb_2').click(function () {
+  $('.modal_pause').addClass('visible');
 });
   
 
@@ -1411,6 +1428,16 @@ $('.co_rev_slider').owlCarousel({
     }
 });
 
+
+//ro_slider
+$('.ro_slider').addClass('owl-carousel');
+$('.ro_slider').owlCarousel({
+    items: 1,
+    center: false,
+    loop: false, 
+    margin: 15,      
+    autoWidth: false,
+});
 
 
 

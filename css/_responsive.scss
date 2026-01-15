@@ -48,6 +48,36 @@
   transform: translateX(0);
   left: 50px;
 }
+.hof_btns{
+  gap: 10px;
+  >div{
+    padding: 0 10px;
+    font-size: 16px;
+    &:before{
+      width: 20px;
+      height: 20px;     
+    }
+  }
+}
+.ho_btn{
+  font-size: 16px;
+  padding: 0 10px;
+}
+.ho_select{
+  .selectbox{
+    .select{
+      width: 180px;
+      padding: 0 10px;
+      .text{
+        font-size: 16px;
+      }
+    }
+    ul.dropdown{
+      padding: 10px;
+    }
+  }
+}
+
 
 } /*1450 */
 @media only screen and (max-width : 1400px){
@@ -273,6 +303,25 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+.hiw_items{
+  gap: 15px;
+}
+.hiw_item{
+  padding: 15px;
+}
+.ho_items{
+  gap: 20px;
+}
+.hoi_name{
+  font-size: 22px;
+}
+.hoi_text{
+  font-size: 16px;
+}
+.hoi_btn{
+  font-size: 14px;
+}
+
 
 
 } /*1200*/
@@ -1322,11 +1371,112 @@ footer{
 .h_city_head{
   display: block;
 }
-
-
-
-
-
+.gr_imp{
+  font-size: 20px;
+}
+.how_it_works{
+  margin-top: 40px;
+}
+.hiw_items{
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 20px;
+}
+.hiw_name{
+  font-size: 18px;
+}
+.hiw_img{
+  >img{
+    max-width: 50px;
+  }
+}
+.ho_fl_btn{
+  display: block;
+  width: 110px;
+  margin: 20px auto;
+}
+.ho_close{
+  display: block;
+}
+.ho_filters{
+  margin-top: unset;
+  width: 280px;
+  height: 100dvh;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  overflow: auto;
+  background: #fff;
+  padding: 50px 20px 20px;
+  position: fixed;
+  z-index: 6;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  transition: .3s;
+  &.opened{
+    transform: translateX(0);
+  }
+}
+.hof_btns{
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.ho_select{
+  .selectbox{
+    .select{
+      width: 100%;
+      .text{
+        font-size: 16px;
+      }
+    }
+    ul.dropdown{
+      padding: 10px;
+    }
+  }
+}
+.ho_items{
+  margin-top: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.rooms{
+  margin-top: 50px;
+}
+.ro_items{
+  margin-top: 20px;
+}
+.roc_name{
+  font-size: 20px;
+}
+.ro_item{
+  border: unset;
+  border-bottom: 1px solid #C4C5CF;
+  padding: 0 0 20px;
+  gap: 25px;
+  &:last-child{
+    border-bottom: unset;
+  }
+}
+.roc_name, .roc_address{
+  font-size: 16px;
+}
+.roi_content{
+  padding: 20px 15px;
+  h3{
+    font-size: 17px;
+  }
+}
+.rocc_head{
+  font-size: 18px;
+}
+.rocc_head{
+  font-size: 16px;
+}
+.rocc_list{
+  margin-top: 8px;
+  >li{
+    font-size: 16px;
+  }
+}
 
 
 } /*1024*/
@@ -1930,6 +2080,27 @@ h1{
     display: block;
     margin-top: 10px;
   }
+}
+.ho_items{
+  grid-template-columns: repeat(2, 1fr);
+}
+.ho_item{
+  padding-bottom: 60px;
+}
+.hoi_name{
+  font-size: 18px;
+}
+.hoi_text{
+  font-size: 15px;
+}
+.hoi_btn{
+  min-height: 40px;
+  max-height: 60px;
+  font-size: 14px;
+}
+.ro_item{
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -2553,7 +2724,24 @@ h1{
 .cob_items{
   grid-template-columns: repeat(1, 1fr);
 }
-
+.gr_address{
+  font-size: 16px;
+}
+.gr_imp{
+  font-size: 16px;
+}
+.hiw_items{
+  gap: 10px;
+}
+.hiw_name{
+  font-size: 14px;
+}
+.card_item_with_btn{
+    .gs_btn{
+      font-size: 13px;
+      text-align: center;
+    }
+  }
 
 } /*480*/
 @media only screen and (max-width : 390px){
@@ -2583,6 +2771,12 @@ h2{
   grid-gap: 20px 10px;
 }
 .card_item{
+  &.with_btn{
+    .btn{
+      margin-top: 10px;
+      font-size: 11px;
+    }
+  }
   &:before{
     width: calc(100% + 10px);
     height: calc(100% + 10px);
@@ -2645,6 +2839,9 @@ h2{
   >span{
     font-size: 13px;
   }
+}
+.ho_items{
+  grid-template-columns: repeat(1, 1fr);
 }
 
 } /*390*/
