@@ -1859,6 +1859,16 @@ h4{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px 30px;
+  &.center{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 40px 30px;
+    >div{
+      max-width: 310px;
+      width: 100%;
+    }
+  }
   &.aligned{
     .card_item{
       display: flex;
@@ -8237,6 +8247,9 @@ footer{
     max-width: 250px !important;
     min-height: unset;
   }
+  &.nh{
+    min-height: unset;
+  }
   .owl-stage{
     display: flex;
   }
@@ -8327,7 +8340,7 @@ footer{
   .ro_slider{
     overflow: hidden;
     max-width: unset;
-    aspect-ratio: 915 / 510;
+    aspect-ratio: 915 / 510;    
   }
   .m_content{
     padding: 0 0 20px;

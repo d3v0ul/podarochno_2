@@ -711,6 +711,12 @@ header{
 }
 .card_items{
   grid-template-columns: repeat(3, 1fr);
+  &.center{
+    flex-wrap: wrap;
+    .ci_img{
+      height: unset;
+    }
+  }
 }
 .ci_img{
   height: 120px;

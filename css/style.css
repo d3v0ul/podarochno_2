@@ -1937,6 +1937,16 @@ h4 {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px 30px;
 }
+.card_items.center {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 40px 30px;
+}
+.card_items.center > div {
+  max-width: 310px;
+  width: 100%;
+}
 .card_items.aligned .card_item {
   display: flex;
   flex-direction: column;
@@ -8598,6 +8608,9 @@ footer {
   max-width: 250px !important;
   min-height: unset;
 }
+.ro_slider.nh {
+  min-height: unset;
+}
 .ro_slider .owl-stage {
   display: flex;
 }
@@ -9316,6 +9329,12 @@ img {
   }
   .card_items {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .card_items.center {
+    flex-wrap: wrap;
+  }
+  .card_items.center .ci_img {
+    height: unset;
   }
   .ci_img {
     height: 120px;
