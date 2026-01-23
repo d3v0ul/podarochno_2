@@ -1082,6 +1082,7 @@ $('.window .close, .mask').click(function (e) {
 
 $('.rocb_2').click(function () {
   $('.modal_pause').addClass('visible');
+  $('.w_slide_up').hide();
 });
   
 
