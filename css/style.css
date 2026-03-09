@@ -236,6 +236,7 @@ body.dark_w:before {
 }
 
 .ho_close {
+  display: none;
   right: 15px;
 }
 .ho_close:before, .ho_close:after {
@@ -1118,9 +1119,15 @@ header.fixed_long {
 }
 
 .cpg_img {
-  width: 94px;
-  min-width: 94px;
-  height: 94px;
+  display: block;
+  flex-shrink: 0;
+}
+.cpg_img > a {
+  display: block;
+  width: 100%;
+  max-width: 94px;
+  aspect-ratio: 50/35;
+  flex-shrink: 0;
   overflow: hidden;
 }
 .cpg_img:hover img {
@@ -1939,13 +1946,22 @@ h4 {
 }
 .card_items.center {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: center;
   gap: 40px 30px;
 }
 .card_items.center > div {
-  max-width: 310px;
+  max-width: calc(25% - 22.5px);
   width: 100%;
+}
+.card_items.center > div .ci_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .card_items.aligned .card_item {
   display: flex;
@@ -8691,6 +8707,17 @@ footer {
 
 .roi_modal {
   max-width: 900px !important;
+  padding-bottom: 100px;
+}
+.roi_modal:after {
+  display: block;
+  content: "";
+  width: 100% x;
+  height: 50px;
+  background: #fff;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
 }
 .roi_modal .close, .roi_modal .hcp_close, .roi_modal .ci_del, .roi_modal .gi_close, .roi_modal .rp_close {
   background: #fff;
@@ -8705,6 +8732,8 @@ footer {
 }
 .roi_modal .m_content {
   padding: 0 0 20px;
+  min-height: 100svh;
+  max-height: 100svh;
 }
 
 .roi_content {
@@ -9333,6 +9362,9 @@ img {
   .card_items.center {
     flex-wrap: wrap;
   }
+  .card_items.center > div {
+    max-width: calc(33% - 30px);
+  }
   .card_items.center .ci_img {
     height: unset;
   }
@@ -9342,6 +9374,7 @@ img {
   .s_popup_wrap {
     top: 69px;
     border-top: 1px solid #DEDEDE;
+    padding-top: 10px;
   }
   .s_popup {
     height: calc(100dvh - 69px);
@@ -10891,6 +10924,15 @@ img {
   .sa_left .card_items {
     grid-template-columns: repeat(2, 1fr);
   }
+  .card_items.center {
+    gap: 10px;
+  }
+  .card_items.center > div {
+    max-width: calc(50% - 5px);
+  }
+  .card_items.center .gs_btn {
+    padding: 0 5px;
+  }
   .card_items.favorites {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -11304,7 +11346,8 @@ img {
     font-size: 13px;
   }
   .ho_items {
-    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-columns: repeat(1, 1fr); */
+    gap: 10px;
   }
 } /*390*/
 

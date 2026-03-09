@@ -713,6 +713,9 @@ header{
   grid-template-columns: repeat(3, 1fr);
   &.center{
     flex-wrap: wrap;
+    >div{
+      max-width: calc(33% - 30px);
+    }
     .ci_img{
       height: unset;
     }
@@ -724,6 +727,7 @@ header{
 .s_popup_wrap{
   top: 69px;
   border-top: 1px solid #DEDEDE;
+  padding-top: 10px;
 }
 .s_popup{
   height: calc(100dvh - 69px);
@@ -2392,6 +2396,15 @@ h1{
   }
 }
 .card_items{
+  &.center{
+    gap: 10px;
+    >div{
+      max-width: calc(50% - 5px);
+    }
+    .gs_btn{
+      padding: 0 5px;
+    }
+  }
   &.favorites{
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2857,7 +2870,8 @@ h2{
   }
 }
 .ho_items{
-  grid-template-columns: repeat(1, 1fr);
+  /* grid-template-columns: repeat(1, 1fr); */
+  gap: 10px;
 }
 
 } /*390*/

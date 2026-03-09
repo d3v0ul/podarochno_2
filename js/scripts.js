@@ -1095,6 +1095,7 @@ $('.datepicker').datepicker({
 });
 
 
+
 //slider_2x_rollers
 var inputs,
 slider = $('.i2_slider').slider({
@@ -1197,9 +1198,9 @@ Swiper.prototype.updateHeaderClasses = function() {
   const isLight = $('.swiper-slide-active').hasClass('light');
   
   $mainSlider.toggleClass('light', isLight);
-  if (!$header.hasClass('fixed')) {
+  if (!$header.is('.fixed, .fixed_long')) {
     $header.toggleClass('light', isLight);
-  }
+}
 };
 
 const swiper = new Swiper('.main_slider', swiperConfig);
