@@ -321,7 +321,15 @@
 .hoi_btn{
   font-size: 14px;
 }
-
+.card_items{
+  &.center{
+    >div{
+      .ci_name{
+        min-height: 39px;
+      }
+    }
+  }
+}
 
 
 } /*1200*/
