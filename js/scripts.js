@@ -614,12 +614,33 @@ $('.impf_left_filter_btn, .f_close').click(function(){
 $('.ci_add').click(function(){
   $(this).siblings('.ci_terms').addClass('opened')
 })
+
 $('.cit_close').click(function(){
   $(this).parent('.ci_terms').removeClass('opened')
+  $(this).closest('.card_item').removeClass('loading')
 })
+
 $('.cit_line').click(function(){
-  $(this).parent('.cit_list').parent('.ci_terms').siblings('.ci_terms_added').addClass('opened')
+  $('.ci_add, .ci_add_2').addClass('disabled')
+  $(this).closest('.card_item').addClass('loading')
+  setTimeout(() => {
+    $('.ci_add, .ci_add_2').removeClass('disabled')  
+    $(this).closest('.ci_terms').removeClass('opened')
+    $(this).closest('.card_item').removeClass('loading')
+    $(this).parent('.cit_list').parent('.ci_terms').siblings('.ci_terms_added').addClass('opened')  
+  }, 4000)  
 })
+
+$('.ci_add_2').click(function(){
+  $('.ci_add, .ci_add_2').addClass('disabled')
+  $(this).closest('.card_item').addClass('loading')
+  setTimeout(() => {
+    $('.ci_add, .ci_add_2').removeClass('disabled')  
+    $(this).closest('.card_item').removeClass('loading')
+    $(this).siblings('.ci_terms_added').addClass('opened')  
+  }, 4000)  
+})
+
 $('.cit_close_2').click(function(){
   $(this).parent('.ci_terms_added').removeClass('opened')
 })

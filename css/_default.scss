@@ -705,6 +705,12 @@ header{
         background-size: cover;
       }
     }
+    &:last-child{
+      &:before{
+        background: url(../images/max.svg) center no-repeat;
+        background-size: cover;
+      }
+    }
   }
 }
 .ft_ask_q{
@@ -1838,6 +1844,40 @@ header{
       }
     } 
   }
+  &.gi_items{
+    .card_item{
+      overflow: hidden;
+      &.loading{
+        &:before{
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        z-index: 6;
+        left: 0;
+        top: 0;
+      }
+        &:after{
+          display: block;
+          content: '';
+          width: 100px;
+          height: 94px;
+          background: #fff url(../images/circle_dots.png) center / cover no-repeat;
+          animation: roll 1s linear infinite;
+          position: absolute;
+          z-index: 7;
+          left: calc(50% - 40px);
+          top: calc(50% - 40px);
+        }
+      }      
+    }
+  }
+}
+@keyframes roll {
+	0% { transform: rotate(0deg); } 
+	100% { transform: rotate(360deg); } 
 }
 h1{
   font-size: 48px;
@@ -2650,14 +2690,21 @@ footer{
     opacity: 0.6;
     transition: .3s;
     >img{
-      display: block;
-      
+      display: block;      
     }
     &:nth-child(2){
       max-width: 20px;
     }
     &:nth-child(3){
       max-width: 13px;
+    }
+    &:nth-child(4){
+      max-width: 15px;
+      >img{
+        width: 15px;
+        aspect-ratio: 1/1;    
+        filter: brightness(3200%);
+      }
     }
     &:hover{
       opacity: 1;
@@ -5545,6 +5592,13 @@ footer{
   cursor: pointer;
   position: relative;
   z-index: 1;
+  &.disabled{
+    pointer-events: none;
+    background: gray;
+  }
+}
+.ci_add_2{
+  @extend .ci_add;
 }
 .ci_terms{  
   width: 100%;
@@ -5553,7 +5607,7 @@ footer{
   border: 1px solid #E7E7E7;
   padding: 20px 0;
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   left: 0;
   top: 0;
   transition: .5s;
@@ -5565,10 +5619,11 @@ footer{
 }
 .ci_terms_added{
   @extend .ci_terms;
-  z-index: 3;
+  z-index: 9;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: none;
 }
 .cit_close_2{
   @extend .cit_close;

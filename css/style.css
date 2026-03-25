@@ -779,6 +779,10 @@ header.fixed_long {
   background: url(../images/tg.svg) center no-repeat;
   background-size: cover;
 }
+.qp_socials > a:last-child:before {
+  background: url(../images/max.svg) center no-repeat;
+  background-size: cover;
+}
 
 .ft_ask_q {
   display: block;
@@ -1910,7 +1914,41 @@ header.fixed_long {
 .card_items.favorites .card_item:nth-child(n+7) {
   display: none;
 }
+.card_items.gi_items .card_item {
+  overflow: hidden;
+}
+.card_items.gi_items .card_item.loading:before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  z-index: 6;
+  left: 0;
+  top: 0;
+}
+.card_items.gi_items .card_item.loading:after {
+  display: block;
+  content: "";
+  width: 100px;
+  height: 94px;
+  background: #fff url(../images/circle_dots.png) center/cover no-repeat;
+  animation: roll 1s linear infinite;
+  position: absolute;
+  z-index: 7;
+  left: calc(50% - 40px);
+  top: calc(50% - 40px);
+}
 
+@keyframes roll {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 h1 {
   font-size: 48px;
   font-weight: 700;
@@ -2748,6 +2786,14 @@ footer {
 }
 .fb_socials > a:nth-child(3) {
   max-width: 13px;
+}
+.fb_socials > a:nth-child(4) {
+  max-width: 15px;
+}
+.fb_socials > a:nth-child(4) > img {
+  width: 15px;
+  aspect-ratio: 1/1;
+  filter: brightness(3200%);
 }
 .fb_socials > a:hover {
   opacity: 1;
@@ -5752,12 +5798,16 @@ footer {
   grid-gap: 30px 20px;
 }
 
-.ci_add {
+.ci_add, .ci_add_2 {
   display: block;
   margin-top: 20px;
   cursor: pointer;
   position: relative;
   z-index: 1;
+}
+.ci_add.disabled, .disabled.ci_add_2 {
+  pointer-events: none;
+  background: gray;
 }
 
 .ci_terms, .ci_terms_added {
@@ -5767,7 +5817,7 @@ footer {
   border: 1px solid #E7E7E7;
   padding: 20px 0;
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   left: 0;
   top: 0;
   transition: 0.5s;
@@ -5779,10 +5829,11 @@ footer {
 }
 
 .ci_terms_added {
-  z-index: 3;
+  z-index: 9;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: none;
 }
 
 .cit_added_text {
@@ -10099,6 +10150,9 @@ img {
   }
   .ro_slider {
     min-height: unset;
+  }
+  .gsip_2 {
+    font-size: 40px;
   }
 } /*1024*/
 @media only screen and (min-width: 768px) {

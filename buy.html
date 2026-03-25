@@ -393,7 +393,7 @@
         <div>доставка</div>
         <div>не выбрано</div>
       </div>
-      <div class="bpr_line no_bdb delivery_text">Доставка будет бесплатная при сумме заказа от 7000 руб</div>
+      <div class="bpr_line no_bdb delivery_text">Доставка будет бесплатная при сумме заказа от 7000 руб оставка будет бесплатная при сумме заказа от 7000 рубоставка будет бесплатная при сумме заказа от 7000 рубоставка будет бесплатная при сумме заказа от 7000 рубоставка будет бесплатная при сумме заказа от 7000 руб</div>
       <div class="bpr_line">
         <div>начислим кэшбек</div>
         <div class="or">199р</div>
@@ -725,6 +725,7 @@
 <script defer>
 //buy fixed right
 let sa = window.matchMedia('all and (min-width: 768px)')
+
 function updateRightPanel() {
   let trigger = $('.bps_head').offset().top - 100
   if ($(window).scrollTop() > trigger) {
@@ -733,16 +734,22 @@ function updateRightPanel() {
     $('.bp_right').removeClass('fixed')
   }
 }
+
 function updateRightPanelFixed2() {
   let $element = $('.bot_sign')
   let scroll = $(window).scrollTop() + $(window).height()
-  let offset = $element.offset().top + 300  
+  let baseHeight = 460
+  let currentHeight = $('.bp_right').outerHeight()
+  let heightDiff = currentHeight - baseHeight
+  let offsetValue = 300 - heightDiff
+  let offset = $element.offset().top + offsetValue  
   if (scroll > offset) {
     $('.bp_right').addClass('fixed_2')
   } else {
     $('.bp_right').removeClass('fixed_2')
   }
 }
+
 if (sa.matches) {
   updateRightPanel()
   updateRightPanelFixed2()  
