@@ -628,7 +628,7 @@ $('.cit_line').click(function(){
     $(this).closest('.ci_terms').removeClass('opened')
     $(this).closest('.card_item').removeClass('loading')
     $(this).parent('.cit_list').parent('.ci_terms').siblings('.ci_terms_added').addClass('opened')  
-  }, 444000)  
+  }, 4000)  
 })
 
 $('.ci_add_2').click(function(){
@@ -638,7 +638,7 @@ $('.ci_add_2').click(function(){
     $('.ci_add, .ci_add_2').removeClass('disabled')  
     $(this).closest('.card_item').removeClass('loading')
     $(this).siblings('.ci_terms_added').addClass('opened')  
-  }, 444000)  
+  }, 4000)  
 })
 
 $('.cit_close_2').click(function(){
