@@ -839,6 +839,19 @@ $('.bps_pay_line').click(function(){
 })
 
 
+//box selection + right panlel box name update
+function updateBoxName() {
+  $('.bpr_box_name').text($('.box_content.selected .box_text').text())
+}
+updateBoxName()
+$('.box_content').on('click', function() {
+  $('.box_content').removeClass('selected')
+  $(this).addClass('selected')
+  updateBoxName()
+})
+
+
+
 //textarea counter
 $('.bps_area').on("input", function() {
   const maxlength = $(this).attr("maxlength");
@@ -1462,6 +1475,41 @@ $('.ro_slider').owlCarousel({
     autoWidth: false,
 });
 
+
+
+//box_slider
+$('.box_slider').addClass('owl-carousel');
+$('.box_slider').owlCarousel({
+    center: false,
+    loop: false, 
+    nav: true,
+    margin: 10,      
+    autoWidth: false,
+    responsive: {
+        0: {
+            items: 1,
+        },
+        520: {
+            items: 2,
+        },
+        1024: {
+            touchDrag: false,
+            mouseDrag: false,
+            pullDrag: false,
+            freeDrag: false,
+        },
+        1200: {
+            items: 3,
+            touchDrag: false,
+            mouseDrag: false,
+            pullDrag: false,
+            freeDrag: false,
+        }
+    }
+});
+
+$(".rp_2").show();
+$(".rp_2").hide();
 
 
 
