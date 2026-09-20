@@ -8810,7 +8810,8 @@ footer {
   padding: 0 45px 2px;
 }
 .box_slider .owl-item {
-  width: 253px !important;
+  max-width: 253px !important;
+  width: 100% !important;
   padding-bottom: 1px;
 }
 .box_slider .owl-dots {
