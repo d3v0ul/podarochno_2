@@ -1506,14 +1506,6 @@ $(function () {
           pullDrag: false,
           freeDrag: false
         }
-      },
-      onInitialized: function () {
-        setTimeout(function () {
-          $slider.trigger('refresh.owl.carousel')
-        }, 0)
-      },
-      onRefreshed: function () {
-        $slider.addClass('is-ready')
       }
     })
   }
@@ -1535,9 +1527,9 @@ $(function () {
     $('.bps_digital').hide()
     $('.bps_box').show()
 
-    setTimeout(function () {
+    requestAnimationFrame(function () {
       $('.box_slider.owl-loaded').trigger('refresh.owl.carousel')
-    }, 0)
+    })
   })
 })
 
