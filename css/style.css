@@ -8802,16 +8802,24 @@ footer {
   margin-top: 20px;
 }
 
+.box_slider:not(.owl-loaded) {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+.box_slider.owl-loaded {
+  visibility: visible;
+  height: auto;
+}
+
 .box_slider {
   width: 100%;
-  max-height: 291px;
-  overflow: hidden;
   margin: 0 auto;
   padding: 0 45px 2px;
 }
 .box_slider .owl-item {
   max-width: 253px !important;
-  width: 100% !important;
   padding-bottom: 1px;
 }
 .box_slider .owl-dots {

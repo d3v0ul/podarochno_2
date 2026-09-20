@@ -1478,35 +1478,68 @@ $('.ro_slider').owlCarousel({
 
 
 //box_slider
-$('.box_slider').addClass('owl-carousel');
-$('.box_slider').owlCarousel({
-    center: false,
-    loop: false, 
-    nav: true,
-    margin: 10,      
-    autoWidth: false,
-    responsive: {
-        0: {
-            items: 1,
-        },
-        520: {
-            items: 2,
-        },
+$(function () {
+
+  function initSlider() {
+    const $slider = $('.box_slider')
+    if ($slider.hasClass('owl-loaded')) return
+
+    $slider.addClass('owl-carousel').owlCarousel({
+      center: false,
+      loop: false,
+      nav: true,
+      margin: 10,
+      autoWidth: false,
+      responsive: {
+        0:   { items: 1 },
+        520: { items: 2 },
         1024: {
-            touchDrag: false,
-            mouseDrag: false,
-            pullDrag: false,
-            freeDrag: false,
+          touchDrag: false,
+          mouseDrag: false,
+          pullDrag: false,
+          freeDrag: false
         },
         1200: {
-            items: 3,
-            touchDrag: false,
-            mouseDrag: false,
-            pullDrag: false,
-            freeDrag: false,
+          items: 3,
+          touchDrag: false,
+          mouseDrag: false,
+          pullDrag: false,
+          freeDrag: false
         }
-    }
-});
+      },
+      onInitialized: function () {
+        setTimeout(function () {
+          $slider.trigger('refresh.owl.carousel')
+        }, 0)
+      },
+      onRefreshed: function () {
+        $slider.addClass('is-ready')
+      }
+    })
+  }
+
+  initSlider()
+
+  $(window).on('resize', function () {
+    $('.box_slider.owl-loaded').trigger('refresh.owl.carousel')
+  })
+
+  $('.r2').click(function () {
+    $('.r1').removeClass('selected')
+    $(this).addClass('selected')
+    $('.rp_2').show()
+    $('.rp_1').hide()
+    $('.bps2, .bps3').removeClass('disabled')
+    $('.bps2, .bps3').addClass('opened')
+    $('.bps2, .bps3').children('.bps_popup').show()
+    $('.bps_digital').hide()
+    $('.bps_box').show()
+
+    setTimeout(function () {
+      $('.box_slider.owl-loaded').trigger('refresh.owl.carousel')
+    }, 0)
+  })
+})
 
 $(".rp_2").show();
 $(".rp_2").hide();
