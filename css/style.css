@@ -8822,8 +8822,9 @@ footer {
   display: flex;
 }
 .box_slider .owl-item {
+  display: flex;
+  flex: 0 0 auto;
   float: none;
-  max-width: 253px !important;
   padding-bottom: 1px;
 }
 .box_slider .owl-dots {
@@ -8858,12 +8859,11 @@ footer {
 }
 
 .box_content {
-  width: calc(100% - 1px);
   position: relative;
   padding: 20px;
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .box_content.selected {
   border: 1px solid #000;
