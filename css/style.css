@@ -8818,7 +8818,11 @@ footer {
   margin: 0 auto;
   padding: 0 45px 2px;
 }
+.box_slider .owl-stage {
+  display: flex;
+}
 .box_slider .owl-item {
+  float: none;
   max-width: 253px !important;
   padding-bottom: 1px;
 }

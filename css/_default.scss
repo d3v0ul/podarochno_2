@@ -8459,7 +8459,11 @@ footer{
 	width: 100%;
   margin: 0 auto;
   padding: 0 45px 2px;
+  .owl-stage{
+    display: flex;
+  }
   .owl-item{
+    float: none;
     max-width: 253px !important;
     padding-bottom: 1px;
   }
