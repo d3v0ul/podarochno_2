@@ -789,6 +789,10 @@ $('.r2').click(function(){
   $('.bps_box').show()
 })
 
+$('.i_i, .i_pop').on('click', function(e){
+  e.stopPropagation()
+})
+
 $('.r3').click(function(){
   $('.r4').removeClass('selected')
   $(this).addClass('selected')
@@ -1480,6 +1484,26 @@ $('.ro_slider').owlCarousel({
 //box_slider
 $(function () {
 
+  let isMobileMode = null
+
+  function isMobile() {
+    return window.innerWidth < 520
+  }
+
+  function updateBoxName() {
+    $('.bpr_box_name').text($('.box_content.selected .box_text').text())
+  }
+
+  function selectActiveSlide() {
+    if (!isMobile()) return
+    const $slider = $('.box_slider')
+    if (!$slider.hasClass('owl-loaded')) return
+
+    $slider.find('.box_content').removeClass('selected')
+    $slider.find('.owl-item.active .box_content').addClass('selected')
+    updateBoxName()
+  }
+
   function initSlider() {
     const $slider = $('.box_slider')
     if ($slider.hasClass('owl-loaded')) return
@@ -1490,6 +1514,8 @@ $(function () {
       nav: true,
       margin: 10,
       autoWidth: false,
+      smartSpeed: isMobile() ? 0 : 250,
+      fluidSpeed: isMobile() ? 0 : 250,
       responsive: {
         0:   { items: 1 },
         520: { items: 2 },
@@ -1506,15 +1532,74 @@ $(function () {
           pullDrag: false,
           freeDrag: false
         }
+      },
+      onChanged: function () {
+        selectActiveSlide()
+      },
+      onInitialized: function () {
+        selectActiveSlide()
       }
     })
   }
 
+  function destroySlider() {
+    const $slider = $('.box_slider')
+    if (!$slider.hasClass('owl-loaded')) return
+    $slider.trigger('destroy.owl.carousel')
+    $slider.removeClass('owl-loaded owl-carousel')
+    $slider.find('.owl-stage-outer').children().unwrap()
+  }
+
+  function rebuildIfNeeded() {
+    const mobile = isMobile()
+    if (isMobileMode === mobile) return
+    isMobileMode = mobile
+
+    destroySlider()
+    initSlider()
+  }
+
+  isMobileMode = isMobile()
   initSlider()
 
   $(window).on('resize', function () {
-    $('.box_slider.owl-loaded').trigger('refresh.owl.carousel')
+    const mobile = isMobile()
+
+    if (mobile !== isMobileMode) {
+      isMobileMode = mobile
+      destroySlider()
+      initSlider()
+    } else {
+      $('.box_slider.owl-loaded').trigger('refresh.owl.carousel')
+      selectActiveSlide()
+    }
   })
+
+  $('.box_slider').on('click', '.owl-nav', function () {
+    if (!isMobile()) return
+
+    const $imgs = $('.box_slider .box_img')
+    $imgs.stop(true, true).css({ opacity: 0, transition: 'none' })
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        $imgs.css('transition', 'opacity .5s ease').css('opacity', 1)
+      })
+    })
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        selectActiveSlide()
+      })
+    })
+  })
+
+  $('.box_content').on('click', function () {
+    $('.box_content').removeClass('selected')
+    $(this).addClass('selected')
+    updateBoxName()
+  })
+
+  updateBoxName()
 
   $('.r2').click(function () {
     $('.r1').removeClass('selected')
@@ -1529,9 +1614,11 @@ $(function () {
 
     requestAnimationFrame(function () {
       $('.box_slider.owl-loaded').trigger('refresh.owl.carousel')
+      selectActiveSlide()
     })
   })
 })
+
 
 $(".rp_2").show();
 $(".rp_2").hide();

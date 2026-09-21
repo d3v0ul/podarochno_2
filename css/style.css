@@ -8863,7 +8863,9 @@ footer {
   padding: 20px;
   cursor: pointer;
   margin-bottom: 2px;
+  background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: opacity 0.4s ease;
 }
 .box_content.selected {
   border: 1px solid #000;

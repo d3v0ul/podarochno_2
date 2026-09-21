@@ -8499,17 +8499,18 @@ footer{
     transform: scaleX(-1);
   }
 }
-
 .box_content{
   position: relative; 
   padding: 20px;
   cursor: pointer;  
   margin-bottom: 2px;
+  background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: opacity .4s ease;
   &.selected{
     border: 1px solid #000;
   }
-}
+}  
 .box_img{
   display: block;
   width: 100%;
